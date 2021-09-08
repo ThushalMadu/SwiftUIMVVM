@@ -1,0 +1,32 @@
+//
+//  ButtonView.swift
+//  NIBMSWIFTUI9
+//
+//  Created by Thushal Madhushankha on 2021-09-07.
+//
+
+import SwiftUI
+
+struct ButtonView: View {
+    var title:String
+    var function: () -> Void
+    var width:CGFloat
+    var height:CGFloat
+
+    var body: some View {
+        Button(action: {
+            self.function()
+        })
+        {
+            Text(title)
+        }.buttonStyle(ButtonViewStyle(definWidth: width, definHeight: height))
+    }
+}
+
+struct ButtonView_Previews: PreviewProvider {
+    
+    
+    static var previews: some View {
+        ButtonView(title: "Save", function:{print("")},width: 300,height: 40)
+    }
+}

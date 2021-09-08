@@ -7,12 +7,23 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A305D78D26E37A430089D617 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A305D78C26E37A430089D617 /* TextView.swift */; };
+		A305D79A26E390600089D617 /* TextViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A305D79926E390600089D617 /* TextViewStyle.swift */; };
+		A362E9BA26E4A81D00E227DA /* ShoppingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A362E9B926E4A81D00E227DA /* ShoppingItem.swift */; };
+		A362E9C326E4AA5700E227DA /* ItemApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A362E9C226E4AA5700E227DA /* ItemApiService.swift */; };
+		A362E9CB26E4AC6F00E227DA /* ApiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A362E9CA26E4AC6F00E227DA /* ApiView.swift */; };
+		A3B776D826E637B700749FF5 /* SingleItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B776D726E637B700749FF5 /* SingleItemView.swift */; };
+		A3B776DD26E6A51000749FF5 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B776DC26E6A51000749FF5 /* ButtonView.swift */; };
+		A3B776E226E6A5FE00749FF5 /* ButtonViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B776E126E6A5FE00749FF5 /* ButtonViewStyle.swift */; };
+		A3CB153126E7EDEA00A0028C /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CB153026E7EDEA00A0028C /* SignUpView.swift */; };
 		A3F47CCF26E2425300B61D16 /* NIBMSWIFTUI9App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F47CCE26E2425300B61D16 /* NIBMSWIFTUI9App.swift */; };
 		A3F47CD126E2425300B61D16 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F47CD026E2425300B61D16 /* ContentView.swift */; };
 		A3F47CD326E2425500B61D16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3F47CD226E2425500B61D16 /* Assets.xcassets */; };
 		A3F47CD626E2425500B61D16 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3F47CD526E2425500B61D16 /* Preview Assets.xcassets */; };
 		A3F47CE126E2425600B61D16 /* NIBMSWIFTUI9Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F47CE026E2425600B61D16 /* NIBMSWIFTUI9Tests.swift */; };
 		A3F47CEC26E2425600B61D16 /* NIBMSWIFTUI9UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F47CEB26E2425600B61D16 /* NIBMSWIFTUI9UITests.swift */; };
+		A3F47CFD26E248AB00B61D16 /* SecondView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F47CFC26E248AB00B61D16 /* SecondView.swift */; };
+		A3F47D0226E2715000B61D16 /* ThirdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F47D0126E2715000B61D16 /* ThirdView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +44,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A305D78C26E37A430089D617 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
+		A305D79926E390600089D617 /* TextViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewStyle.swift; sourceTree = "<group>"; };
+		A362E9B926E4A81D00E227DA /* ShoppingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItem.swift; sourceTree = "<group>"; };
+		A362E9C226E4AA5700E227DA /* ItemApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemApiService.swift; sourceTree = "<group>"; };
+		A362E9CA26E4AC6F00E227DA /* ApiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiView.swift; sourceTree = "<group>"; };
+		A3B776D726E637B700749FF5 /* SingleItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleItemView.swift; sourceTree = "<group>"; };
+		A3B776DC26E6A51000749FF5 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
+		A3B776E126E6A5FE00749FF5 /* ButtonViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewStyle.swift; sourceTree = "<group>"; };
+		A3CB153026E7EDEA00A0028C /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		A3F47CCB26E2425300B61D16 /* NIBMSWIFTUI9.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NIBMSWIFTUI9.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3F47CCE26E2425300B61D16 /* NIBMSWIFTUI9App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NIBMSWIFTUI9App.swift; sourceTree = "<group>"; };
 		A3F47CD026E2425300B61D16 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -45,6 +65,8 @@
 		A3F47CE726E2425600B61D16 /* NIBMSWIFTUI9UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NIBMSWIFTUI9UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3F47CEB26E2425600B61D16 /* NIBMSWIFTUI9UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NIBMSWIFTUI9UITests.swift; sourceTree = "<group>"; };
 		A3F47CED26E2425600B61D16 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A3F47CFC26E248AB00B61D16 /* SecondView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondView.swift; sourceTree = "<group>"; };
+		A3F47D0126E2715000B61D16 /* ThirdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +94,46 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A362E9B326E4A34B00E227DA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A3F47CD026E2425300B61D16 /* ContentView.swift */,
+				A3F47D0126E2715000B61D16 /* ThirdView.swift */,
+				A3F47CFC26E248AB00B61D16 /* SecondView.swift */,
+				A362E9CA26E4AC6F00E227DA /* ApiView.swift */,
+				A3B776D726E637B700749FF5 /* SingleItemView.swift */,
+				A3CB153026E7EDEA00A0028C /* SignUpView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A362E9B426E4A36100E227DA /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				A305D78C26E37A430089D617 /* TextView.swift */,
+				A3B776E126E6A5FE00749FF5 /* ButtonViewStyle.swift */,
+				A3B776DC26E6A51000749FF5 /* ButtonView.swift */,
+				A305D79926E390600089D617 /* TextViewStyle.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		A362E9B826E4A3D700E227DA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A362E9B926E4A81D00E227DA /* ShoppingItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A362E9C126E4A90900E227DA /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A362E9C226E4AA5700E227DA /* ItemApiService.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		A3F47CC226E2425300B61D16 = {
 			isa = PBXGroup;
 			children = (
@@ -95,8 +157,11 @@
 		A3F47CCD26E2425300B61D16 /* NIBMSWIFTUI9 */ = {
 			isa = PBXGroup;
 			children = (
+				A362E9C126E4A90900E227DA /* ViewModel */,
+				A362E9B826E4A3D700E227DA /* Model */,
+				A362E9B426E4A36100E227DA /* Components */,
+				A362E9B326E4A34B00E227DA /* View */,
 				A3F47CCE26E2425300B61D16 /* NIBMSWIFTUI9App.swift */,
-				A3F47CD026E2425300B61D16 /* ContentView.swift */,
 				A3F47CD226E2425500B61D16 /* Assets.xcassets */,
 				A3F47CD726E2425500B61D16 /* Info.plist */,
 				A3F47CD426E2425500B61D16 /* Preview Content */,
@@ -259,8 +324,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3F47D0226E2715000B61D16 /* ThirdView.swift in Sources */,
+				A362E9C326E4AA5700E227DA /* ItemApiService.swift in Sources */,
+				A305D79A26E390600089D617 /* TextViewStyle.swift in Sources */,
+				A3F47CFD26E248AB00B61D16 /* SecondView.swift in Sources */,
+				A362E9BA26E4A81D00E227DA /* ShoppingItem.swift in Sources */,
+				A362E9CB26E4AC6F00E227DA /* ApiView.swift in Sources */,
+				A3B776DD26E6A51000749FF5 /* ButtonView.swift in Sources */,
 				A3F47CD126E2425300B61D16 /* ContentView.swift in Sources */,
+				A3CB153126E7EDEA00A0028C /* SignUpView.swift in Sources */,
+				A3B776E226E6A5FE00749FF5 /* ButtonViewStyle.swift in Sources */,
 				A3F47CCF26E2425300B61D16 /* NIBMSWIFTUI9App.swift in Sources */,
+				A305D78D26E37A430089D617 /* TextView.swift in Sources */,
+				A3B776D826E637B700749FF5 /* SingleItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

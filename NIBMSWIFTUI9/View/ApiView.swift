@@ -21,7 +21,11 @@ struct ApiView: View {
                     itemApiService.loadData { (shoppingItems) in
                         self.shoppingItems = shoppingItems
                     }
-                }.navigationTitle("Shopping Items List")
+                }
+                .navigationBarHidden(true)
+                .navigationBarBackButtonHidden(true)
+            
+            
         }else{
             NavigationView {
                 List(shoppingItems, id: \.id) { ShoppingItem in
@@ -57,8 +61,11 @@ struct ApiView: View {
                     itemApiService.loadData { (shoppingItems) in
                         self.shoppingItems = shoppingItems
                     }
-                }.navigationTitle("Shopping Items List").accentColor(.red)
+                }
+              
             }
+            .navigationBarHidden(true)
+            .navigationBarBackButtonHidden(true)
         }
         
     }

@@ -20,7 +20,7 @@ class ItemApiService:ObservableObject {
         
         URLSession.shared.dataTask(with: url) { data, response, error in
             let shoppingItems = try! JSONDecoder().decode([ShoppingItem].self, from: data!)
-            print(shoppingItems)
+//            print(shoppingItems)
             DispatchQueue.main.async {
                 completion(shoppingItems)
                 self.loading = false

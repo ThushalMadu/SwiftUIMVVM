@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -16,6 +16,9 @@
 		A3B776DD26E6A51000749FF5 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B776DC26E6A51000749FF5 /* ButtonView.swift */; };
 		A3B776E226E6A5FE00749FF5 /* ButtonViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B776E126E6A5FE00749FF5 /* ButtonViewStyle.swift */; };
 		A3CB153126E7EDEA00A0028C /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CB153026E7EDEA00A0028C /* SignUpView.swift */; };
+		A3DAC7ED26E9307600C3F1D8 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A3DAC7EC26E9307600C3F1D8 /* Alamofire */; };
+		A3DAC7F226E930C400C3F1D8 /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DAC7F126E930C400C3F1D8 /* SignUpService.swift */; };
+		A3DAC7F726E94B7C00C3F1D8 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DAC7F626E94B7C00C3F1D8 /* UserModel.swift */; };
 		A3F47CCF26E2425300B61D16 /* NIBMSWIFTUI9App.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F47CCE26E2425300B61D16 /* NIBMSWIFTUI9App.swift */; };
 		A3F47CD126E2425300B61D16 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3F47CD026E2425300B61D16 /* ContentView.swift */; };
 		A3F47CD326E2425500B61D16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3F47CD226E2425500B61D16 /* Assets.xcassets */; };
@@ -53,6 +56,8 @@
 		A3B776DC26E6A51000749FF5 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		A3B776E126E6A5FE00749FF5 /* ButtonViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewStyle.swift; sourceTree = "<group>"; };
 		A3CB153026E7EDEA00A0028C /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		A3DAC7F126E930C400C3F1D8 /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
+		A3DAC7F626E94B7C00C3F1D8 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		A3F47CCB26E2425300B61D16 /* NIBMSWIFTUI9.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NIBMSWIFTUI9.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3F47CCE26E2425300B61D16 /* NIBMSWIFTUI9App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NIBMSWIFTUI9App.swift; sourceTree = "<group>"; };
 		A3F47CD026E2425300B61D16 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -74,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3DAC7ED26E9307600C3F1D8 /* Alamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,8 +106,8 @@
 				A3F47CD026E2425300B61D16 /* ContentView.swift */,
 				A3F47D0126E2715000B61D16 /* ThirdView.swift */,
 				A3F47CFC26E248AB00B61D16 /* SecondView.swift */,
-				A362E9CA26E4AC6F00E227DA /* ApiView.swift */,
 				A3B776D726E637B700749FF5 /* SingleItemView.swift */,
+				A362E9CA26E4AC6F00E227DA /* ApiView.swift */,
 				A3CB153026E7EDEA00A0028C /* SignUpView.swift */,
 			);
 			path = View;
@@ -122,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				A362E9B926E4A81D00E227DA /* ShoppingItem.swift */,
+				A3DAC7F626E94B7C00C3F1D8 /* UserModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -130,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				A362E9C226E4AA5700E227DA /* ItemApiService.swift */,
+				A3DAC7F126E930C400C3F1D8 /* SignUpService.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -211,6 +219,9 @@
 			dependencies = (
 			);
 			name = NIBMSWIFTUI9;
+			packageProductDependencies = (
+				A3DAC7EC26E9307600C3F1D8 /* Alamofire */,
+			);
 			productName = NIBMSWIFTUI9;
 			productReference = A3F47CCB26E2425300B61D16 /* NIBMSWIFTUI9.app */;
 			productType = "com.apple.product-type.application";
@@ -282,6 +293,9 @@
 				Base,
 			);
 			mainGroup = A3F47CC226E2425300B61D16;
+			packageReferences = (
+				A3DAC7EB26E9307600C3F1D8 /* XCRemoteSwiftPackageReference "Alamofire" */,
+			);
 			productRefGroup = A3F47CCC26E2425300B61D16 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -333,9 +347,11 @@
 				A3B776DD26E6A51000749FF5 /* ButtonView.swift in Sources */,
 				A3F47CD126E2425300B61D16 /* ContentView.swift in Sources */,
 				A3CB153126E7EDEA00A0028C /* SignUpView.swift in Sources */,
+				A3DAC7F226E930C400C3F1D8 /* SignUpService.swift in Sources */,
 				A3B776E226E6A5FE00749FF5 /* ButtonViewStyle.swift in Sources */,
 				A3F47CCF26E2425300B61D16 /* NIBMSWIFTUI9App.swift in Sources */,
 				A305D78D26E37A430089D617 /* TextView.swift in Sources */,
+				A3DAC7F726E94B7C00C3F1D8 /* UserModel.swift in Sources */,
 				A3B776D826E637B700749FF5 /* SingleItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -650,6 +666,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A3DAC7EB26E9307600C3F1D8 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A3DAC7EC26E9307600C3F1D8 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A3DAC7EB26E9307600C3F1D8 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A3F47CC326E2425300B61D16 /* Project object */;
 }

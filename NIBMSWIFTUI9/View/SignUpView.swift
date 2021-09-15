@@ -19,7 +19,6 @@ struct SignUpView: View {
     
     let url = "https://aqueous-temple-31849.herokuapp.com/users/addUser"
     
-    
     var body: some View {
         NavigationView {
             ScrollView {
@@ -82,9 +81,10 @@ struct SignUpView: View {
                                                 loading = false
                                                 isActiveLink.toggle()
                                                 break
-                                            case .failure:
+                                            case .failure(let error):
+                                                isActiveLink.toggle()
+                                                print(error)
                                                 loading = false
-                                                print(Error.self)
                                             }
                                         }
                                        },

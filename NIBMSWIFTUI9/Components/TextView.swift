@@ -16,6 +16,7 @@ struct TextView: View {
     var body: some View {
         VStack{
             TextField(title, text: $text)
+                .autocapitalization(.none)
                 .keyboardType(keyboardType)
                 .textFieldStyle(TextViewStyle())
         }

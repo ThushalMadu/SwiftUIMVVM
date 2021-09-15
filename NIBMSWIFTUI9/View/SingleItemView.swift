@@ -11,6 +11,8 @@ struct SingleItemView: View {
     
     var singleItem: ShoppingItem
     @State var quantity = 1
+//    @ObservedObject var cartViewModel: CartViewModel = CartViewModel()
+        @EnvironmentObject var cartViewModel: CartViewModel
     
     var body: some View {
         ZStack{
@@ -46,7 +48,6 @@ struct SingleItemView: View {
                         Spacer()
                         ButtonView(title: "+",
                                    function: {
-                                    print("This is Plus")
                                     quantity += 1
                                    },
                                    width:UIScreen.main.bounds.width/30,height: UIScreen.main.bounds.height/120)
@@ -60,7 +61,6 @@ struct SingleItemView: View {
                                         quantity -= 1
                                         
                                     }
-                                    print("This is Minus")
                                    },
                                    width:UIScreen.main.bounds.width/30,height: UIScreen.main.bounds.height/120)
                             .padding(.trailing, 30.0)
@@ -88,20 +88,21 @@ struct SingleItemView: View {
                 Spacer()
                 ButtonView(title: "Add to Cart",
                            function: {
-                            print("This is Passing Function")
+                            self.cartViewModel.addToCart(item: Cart(productName: self.singleItem.productName, price: self.singleItem.price, qty: self.quantity))
                            },
                            width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/45)
             }
-
+            
         }
     }
 }
 
 struct SingleItemView_Previews: PreviewProvider {
     @StateObject static var singleitm = ItemApiService()
-    
+    static let cartViewModel = CartViewModel()
+
     static var previews: some View {
         
-        SingleItemView(singleItem: singleitm.shoppingItems[0])
+        SingleItemView(singleItem: singleitm.shoppingItems[0]).environmentObject(cartViewModel)
     }
 }

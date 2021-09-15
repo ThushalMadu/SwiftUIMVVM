@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct NIBMSWIFTUI9App: App {
+    @StateObject private var order = CartViewModel()
+
     var body: some Scene {
         WindowGroup {
-            SignUpView()
+            SignUpView().environmentObject(order)
         }
     }
 }

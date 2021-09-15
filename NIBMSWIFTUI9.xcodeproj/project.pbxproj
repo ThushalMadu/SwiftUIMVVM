@@ -12,6 +12,9 @@
 		A362E9BA26E4A81D00E227DA /* ShoppingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A362E9B926E4A81D00E227DA /* ShoppingItem.swift */; };
 		A362E9C326E4AA5700E227DA /* ItemApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A362E9C226E4AA5700E227DA /* ItemApiService.swift */; };
 		A362E9CB26E4AC6F00E227DA /* ApiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A362E9CA26E4AC6F00E227DA /* ApiView.swift */; };
+		A371004526EA9B9200B654FA /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A371004426EA9B9200B654FA /* CartModel.swift */; };
+		A371004A26EAAACD00B654FA /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A371004926EAAACD00B654FA /* CartViewModel.swift */; };
+		A392722126F29CFF00C74A68 /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A392722026F29CFF00C74A68 /* FloatingButton.swift */; };
 		A3B776D826E637B700749FF5 /* SingleItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B776D726E637B700749FF5 /* SingleItemView.swift */; };
 		A3B776DD26E6A51000749FF5 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B776DC26E6A51000749FF5 /* ButtonView.swift */; };
 		A3B776E226E6A5FE00749FF5 /* ButtonViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B776E126E6A5FE00749FF5 /* ButtonViewStyle.swift */; };
@@ -52,6 +55,9 @@
 		A362E9B926E4A81D00E227DA /* ShoppingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItem.swift; sourceTree = "<group>"; };
 		A362E9C226E4AA5700E227DA /* ItemApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemApiService.swift; sourceTree = "<group>"; };
 		A362E9CA26E4AC6F00E227DA /* ApiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiView.swift; sourceTree = "<group>"; };
+		A371004426EA9B9200B654FA /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
+		A371004926EAAACD00B654FA /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
+		A392722026F29CFF00C74A68 /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
 		A3B776D726E637B700749FF5 /* SingleItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleItemView.swift; sourceTree = "<group>"; };
 		A3B776DC26E6A51000749FF5 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		A3B776E126E6A5FE00749FF5 /* ButtonViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewStyle.swift; sourceTree = "<group>"; };
@@ -117,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				A305D78C26E37A430089D617 /* TextView.swift */,
+				A392722026F29CFF00C74A68 /* FloatingButton.swift */,
 				A3B776E126E6A5FE00749FF5 /* ButtonViewStyle.swift */,
 				A3B776DC26E6A51000749FF5 /* ButtonView.swift */,
 				A305D79926E390600089D617 /* TextViewStyle.swift */,
@@ -129,6 +136,7 @@
 			children = (
 				A362E9B926E4A81D00E227DA /* ShoppingItem.swift */,
 				A3DAC7F626E94B7C00C3F1D8 /* UserModel.swift */,
+				A371004426EA9B9200B654FA /* CartModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -137,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				A362E9C226E4AA5700E227DA /* ItemApiService.swift */,
+				A371004926EAAACD00B654FA /* CartViewModel.swift */,
 				A3DAC7F126E930C400C3F1D8 /* SignUpService.swift */,
 			);
 			path = ViewModel;
@@ -343,10 +352,13 @@
 				A305D79A26E390600089D617 /* TextViewStyle.swift in Sources */,
 				A3F47CFD26E248AB00B61D16 /* SecondView.swift in Sources */,
 				A362E9BA26E4A81D00E227DA /* ShoppingItem.swift in Sources */,
+				A371004526EA9B9200B654FA /* CartModel.swift in Sources */,
+				A371004A26EAAACD00B654FA /* CartViewModel.swift in Sources */,
 				A362E9CB26E4AC6F00E227DA /* ApiView.swift in Sources */,
 				A3B776DD26E6A51000749FF5 /* ButtonView.swift in Sources */,
 				A3F47CD126E2425300B61D16 /* ContentView.swift in Sources */,
 				A3CB153126E7EDEA00A0028C /* SignUpView.swift in Sources */,
+				A392722126F29CFF00C74A68 /* FloatingButton.swift in Sources */,
 				A3DAC7F226E930C400C3F1D8 /* SignUpService.swift in Sources */,
 				A3B776E226E6A5FE00749FF5 /* ButtonViewStyle.swift in Sources */,
 				A3F47CCF26E2425300B61D16 /* NIBMSWIFTUI9App.swift in Sources */,

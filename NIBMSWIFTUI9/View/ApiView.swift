@@ -11,8 +11,7 @@ struct ApiView: View {
     
     @State var shoppingItems = [ShoppingItem]()
     @StateObject var itemApiService = ItemApiService()
-    
-    
+
     var body: some View {
         if(itemApiService.loading){
             ProgressView("Please wait...").progressViewStyle(CircularProgressViewStyle(tint: Color.purple)).scaleEffect(1, anchor: .center)
@@ -21,9 +20,10 @@ struct ApiView: View {
                     itemApiService.loadData { (shoppingItems) in
                         self.shoppingItems = shoppingItems
                     }
+                    
                 }
-                .navigationBarHidden(true)
-                .navigationBarBackButtonHidden(true)
+                        .navigationBarHidden(true)
+                        .navigationBarBackButtonHidden(true)
             
             
         }else{
@@ -56,23 +56,25 @@ struct ApiView: View {
                                 .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                         }
                     }
+
                 }
                 .onAppear() {
                     itemApiService.loadData { (shoppingItems) in
                         self.shoppingItems = shoppingItems
                     }
                 }
-              
             }
-            .navigationBarHidden(true)
-            .navigationBarBackButtonHidden(true)
+                    .navigationBarHidden(true)
+                    .navigationBarBackButtonHidden(true)
         }
         
     }
 }
 
 struct ApiView_Previews: PreviewProvider {
+    static let cartViewModel = CartViewModel()
+
     static var previews: some View {
-        ApiView()
+        ApiView().environmentObject(cartViewModel)
     }
 }

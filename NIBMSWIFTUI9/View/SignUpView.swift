@@ -18,7 +18,7 @@ struct SignUpView: View {
     @State var loading = false
     
     let url = "https://aqueous-temple-31849.herokuapp.com/users/addUser"
-    
+
     var body: some View {
         NavigationView {
             ScrollView {
@@ -26,23 +26,26 @@ struct SignUpView: View {
                     Spacer()
                     HStack{
                         Text("Hello Thushal")
-                            .font(Font.custom("Avenir", size: 30))
+                            .font(Font.custom("Georgia", size: 30))
                             .fontWeight(.semibold)
                             .padding(.leading, 30.0)
+                            .padding(.top, 10.0)
                         Spacer()
                     }
                     HStack{
                         Text("Welcome")
-                            .font(Font.custom("Avenir", size: 30))
+                            .font(Font.custom("Georgia", size: 30))
                             .fontWeight(.semibold)
                             .padding(.leading, 30.0)
+                            .padding(.top, 5.0)
                         Spacer()
                     }
                     HStack{
                         Text("Back")
-                            .font(Font.custom("Avenir", size: 30))
+                            .font(Font.custom("Georgia", size: 30))
                             .fontWeight(.semibold)
                             .padding(.leading, 30.0)
+                            .padding(.top, 5.0)
                         Spacer()
                     }
                     Image("shoppingbro")
@@ -54,13 +57,13 @@ struct SignUpView: View {
                         TextView(title: "Name", text: $name)
                         TextView(title: "Email Address", text: $email)
                         TextView(title: "Phone Number", text: $phoneNumber)
-                        TextView(title: "Password", text: $password)
+                        SecureView(title: "Password", text: $password)
                         
                     }
                     .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
                     
                     .padding([.leading, .bottom], 30.0)
-                    NavigationLink(destination: ApiView(), isActive: $isActiveLink) {
+                    NavigationLink(destination: HomeView(), isActive: $isActiveLink) {
                         if(loading){
                             ProgressView("Please wait...").progressViewStyle(CircularProgressViewStyle(tint: Color.yellow)).scaleEffect(1, anchor: .center)
                         }else{
@@ -78,6 +81,7 @@ struct SignUpView: View {
                                             switch (response.result) {
                                             case .success:
                                                 print(response)
+                                                UserDefaults.standard.set(self.name, forKey: "name")
                                                 loading = false
                                                 isActiveLink.toggle()
                                                 break

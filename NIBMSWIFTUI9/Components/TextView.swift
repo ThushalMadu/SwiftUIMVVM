@@ -17,6 +17,7 @@ struct TextView: View {
         VStack{
             TextField(title, text: $text)
                 .autocapitalization(.none)
+                .disableAutocorrection(true)
                 .keyboardType(keyboardType)
                 .textFieldStyle(TextViewStyle())
         }
@@ -25,11 +26,6 @@ struct TextView: View {
                         .fill(Color.white)
                         .shadow(color: Color.gray.opacity(0.4), radius: 5, x: 1, y: 3)
             )
-
-    // << here !!
-
-        
-
     }
 }
 

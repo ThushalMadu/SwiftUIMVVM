@@ -11,8 +11,8 @@ struct SingleItemView: View {
     
     var singleItem: ShoppingItem
     @State var quantity = 1
-//    @ObservedObject var cartViewModel: CartViewModel = CartViewModel()
-        @EnvironmentObject var cartViewModel: CartViewModel
+    //    @ObservedObject var cartViewModel: CartViewModel = CartViewModel()
+    @EnvironmentObject var cartViewModel: CartViewModel
     
     var body: some View {
         ZStack{
@@ -94,13 +94,16 @@ struct SingleItemView: View {
             }
             
         }
+        
+//        .navigationBarBackButtonHidden(true)
+//        .navigationBarHidden(true)
     }
 }
 
 struct SingleItemView_Previews: PreviewProvider {
     @StateObject static var singleitm = ItemApiService()
     static let cartViewModel = CartViewModel()
-
+    
     static var previews: some View {
         
         SingleItemView(singleItem: singleitm.shoppingItems[0]).environmentObject(cartViewModel)

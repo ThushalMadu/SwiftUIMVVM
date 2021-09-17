@@ -11,69 +11,82 @@ struct ApiView: View {
     
     @State var shoppingItems = [ShoppingItem]()
     @StateObject var itemApiService = ItemApiService()
-
+    @State private var isActive = false
+    
     var body: some View {
         if(itemApiService.loading){
             ProgressView("Please wait...").progressViewStyle(CircularProgressViewStyle(tint: Color.purple)).scaleEffect(1, anchor: .center)
-                
                 .onAppear() {
                     itemApiService.loadData { (shoppingItems) in
                         self.shoppingItems = shoppingItems
                     }
-                    
                 }
-                        .navigationBarHidden(true)
-                        .navigationBarBackButtonHidden(true)
-            
-            
+                .navigationBarHidden(true)
+                .navigationBarBackButtonHidden(true)
         }else{
-            NavigationView {
-                List(shoppingItems, id: \.id) { ShoppingItem in
-                    NavigationLink(destination: SingleItemView(singleItem: ShoppingItem)) {
-                        HStack {
-                            Image("burger")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width:100, height:100)
-                            VStack(alignment: .leading){
-                                Text("\(ShoppingItem.productName)")
-                                    .fontWeight(.semibold)
-                                    .foregroundColor(Color.black)
-                                    .multilineTextAlignment(.leading)
-                                    .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-                                Text("\(ShoppingItem.calories)")
-                                    .font(.caption)
-                                    .fontWeight(.light)
-                                    .foregroundColor(Color.black)
-                                    .multilineTextAlignment(.leading)
-                                    .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-                            }
-                            Spacer()
-                            Text("LKR. \(ShoppingItem.price)")
-                                .fontWeight(.medium)
+            List(shoppingItems, id: \.id) { ShoppingItem in
+                NavigationLink(destination: SingleItemView(singleItem: ShoppingItem)) {
+                    HStack {
+                        Image("burger")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width:100, height:100)
+                        VStack(alignment: .leading){
+                            Text("\(ShoppingItem.productName)")
+                                .fontWeight(.semibold)
                                 .foregroundColor(Color.black)
-                                .multilineTextAlignment(.center)
+                                .multilineTextAlignment(.leading)
+                                .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                            Text("\(ShoppingItem.calories)")
+                                .font(.caption)
+                                .fontWeight(.light)
+                                .foregroundColor(Color.black)
+                                .multilineTextAlignment(.leading)
                                 .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                         }
+                        Spacer()
+                        Text("LKR. \(ShoppingItem.price)")
+                            .fontWeight(.medium)
+                            .foregroundColor(Color.black)
+                            .multilineTextAlignment(.center)
+                            .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                     }
-
                 }
-                .onAppear() {
-                    itemApiService.loadData { (shoppingItems) in
-                        self.shoppingItems = shoppingItems
-                    }
+                
+            }
+            .background(
+                NavigationLink(destination: CartView(), isActive: $isActive,
+                               label: { EmptyView() })
+            )
+            .onAppear() {
+                itemApiService.loadData { (shoppingItems) in
+                    self.shoppingItems = shoppingItems
                 }
             }
-                    .navigationBarHidden(true)
-                    .navigationBarBackButtonHidden(true)
+            .navigationBarTitle("Today‘s Fast Foods", displayMode: .large)
+            .navigationBarItems(leading:
+                                    HStack {}, trailing:
+                                        HStack {
+                                            Button(action: {
+                                                self.isActive = true
+                                            }) {
+                                                Image("cartOrange")
+                                                    .resizable()
+                                                    .frame(width: 30, height: 30)
+                                            }
+                                            
+                                        }
+            )
+            .navigationBarBackButtonHidden(true)
+            //            .navigationBarHidden(true)
+            
         }
-        
     }
 }
 
 struct ApiView_Previews: PreviewProvider {
     static let cartViewModel = CartViewModel()
-
+    
     static var previews: some View {
         ApiView().environmentObject(cartViewModel)
     }

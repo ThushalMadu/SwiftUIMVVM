@@ -46,7 +46,7 @@ struct ApiView: View {
                         .foregroundColor(.orange)
                 }
                 .padding([.top, .leading, .trailing], 30.0)
-                    
+                
                 List(shoppingItems, id: \.id) { ShoppingItem in
                     NavigationLink(destination: SingleItemView(singleItem: ShoppingItem)) {
                         HStack {

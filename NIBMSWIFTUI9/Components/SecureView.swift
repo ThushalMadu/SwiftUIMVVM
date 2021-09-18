@@ -1,23 +1,21 @@
 //
-//  TextView.swift
+//  SecureField.swift
 //  NIBMSWIFTUI9
 //
-//  Created by Thushal Madhushankha on 2021-09-04.
+//  Created by Thushal Madhushankha on 2021-09-17.
 //
 
 import SwiftUI
 
-struct TextView: View {
-    
+struct SecureView: View {
     var title:String
     @Binding var text:String
     var keyboardType = UIKeyboardType.default
     
     var body: some View {
         VStack{
-            TextField(title, text: $text)
+            SecureField(title, text: $text)
                 .autocapitalization(.none)
-                .disableAutocorrection(true)
                 .keyboardType(keyboardType)
                 .textFieldStyle(TextViewStyle())
         }
@@ -29,11 +27,10 @@ struct TextView: View {
     }
 }
 
-struct TextView_Previews: PreviewProvider {
-    
+struct SecureView_Previews: PreviewProvider {
     @State static var name:String = ""
-    
+
     static var previews: some View {
-        TextView(title: "qwew", text: $name)
+        SecureView(title: "qwew", text: $name)
     }
 }

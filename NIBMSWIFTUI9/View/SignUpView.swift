@@ -18,7 +18,7 @@ struct SignUpView: View {
     @State var loading = false
     
     let url = "https://aqueous-temple-31849.herokuapp.com/users/addUser"
-
+    
     var body: some View {
         NavigationView {
             ScrollView {

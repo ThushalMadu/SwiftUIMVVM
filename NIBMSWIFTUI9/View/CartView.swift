@@ -34,7 +34,7 @@ struct CartView: View {
                     .font(Font.custom("Georgia", size: 16))
                     .fontWeight(.regular)
                     .foregroundColor(Color.black)
-                    .padding(.top, 10.0)
+                    .padding(.top, 5.0)
                 Spacer()
             }else{
                 List{
@@ -72,7 +72,6 @@ struct CartView: View {
                 }
             }
         }
-        
     }
 }
 struct CartView_Previews: PreviewProvider {

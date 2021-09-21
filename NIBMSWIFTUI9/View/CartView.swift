@@ -37,38 +37,71 @@ struct CartView: View {
                     .padding(.top, 5.0)
                 Spacer()
             }else{
-                List{
-                    Section {
-                        ForEach(cart.orderItems) { item in
-                            HStack {
-                                Image("burger")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width:100, height:100)
-                                VStack(alignment: .leading){
-                                    Text("\(item.productName)")
-                                        .fontWeight(.semibold)
-                                        .foregroundColor(Color.black)
-                                        .multilineTextAlignment(.leading)
-                                        .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-                                    Text("LKR. \(item.price) x \(item.qty)")
-                                        .fontWeight(.medium)
-                                        .foregroundColor(Color.black)
-                                        .multilineTextAlignment(.center)
-                                        .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-                                }
-                                Spacer()
-                                Button(action: {
-                                    cart.remove(item: Cart(productName: item.productName, price: item.price, qty: item.qty))
-                                }) {
-                                    Image("rubbish")
+                VStack{
+                    List{
+                        Section {
+                            ForEach(cart.orderItems) { item in
+                                HStack {
+                                    Image("burger")
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
-                                        .frame(width:30, height:30)
+                                        .frame(width:100, height:100)
+                                    VStack(alignment: .leading){
+                                        Text("\(item.productName)")
+                                            .fontWeight(.semibold)
+                                            .foregroundColor(Color.black)
+                                            .multilineTextAlignment(.leading)
+                                            .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                                        Text("LKR. \(item.price) x \(item.qty)")
+                                            .fontWeight(.medium)
+                                            .foregroundColor(Color.black)
+                                            .multilineTextAlignment(.center)
+                                            .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                                    }
+                                    Spacer()
+                                    Button(action: {
+                                        cart.remove(item: Cart(productName: item.productName, price: item.price, qty: item.qty))
+                                    }) {
+                                        Image("rubbish")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width:30, height:30)
+                                    }
                                 }
                             }
                         }
                     }
+                    Spacer()
+                    VStack{
+                        HStack{
+                            Text("Total Payment")
+                                .font(Font.custom("Georgia", size: 18))
+                                .fontWeight(.regular)
+                                .foregroundColor(Color.black)
+                                .padding(.leading, 30.0)
+                            Spacer()
+                            Text("Rs .\(String(cart.itemTotol))")
+                                .font(Font.custom("Georgia", size: 18))
+                                .fontWeight(.regular)
+                                .foregroundColor(Color.orange)
+                                .padding(.trailing, 30.0)
+                        }
+                        .padding(.top)
+                        Spacer()
+                        ButtonView(title: "Checkout",
+                                   function: {
+                                    
+                                   },
+                                   width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/45)
+                        Spacer()
+                    }.frame(height: 150)
+                    .background(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .fill(Color.white)
+                                    .shadow(color: Color.gray.opacity(0.4), radius: 5, x: 1, y: 3)
+                        )
+
+                    
                 }
             }
         }

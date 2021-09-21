@@ -10,20 +10,21 @@ import Alamofire
 
 struct SignUpView: View {
     
-    @State var email:String = ""
-    @State var name:String = ""
-    @State var phoneNumber:String = ""
-    @State var password:String = ""
-    @State var isActiveLink = false
-    @State var loading = false
-    @State var errorMessage = ""
+    @State private var email:String = ""
+    @State private var name:String = ""
+    @State private var phoneNumber:String = ""
+    @State private var password:String = ""
+    @State private var isActiveLink = false
+    @State private var isActiveLinkSignIn = false
+    @State private var loading = false
+    @State private var errorMessage = ""
+    
     let url = "https://aqueous-temple-31849.herokuapp.com/users/addUser"
     
     var body: some View {
         NavigationView {
             ScrollView {
                 VStack{
-                    Spacer()
                     HStack{
                         Text("Welcome Back")
                             .font(Font.custom("Georgia", size: 30))
@@ -41,22 +42,8 @@ struct SignUpView: View {
                             .padding(.top, 5.0)
                         Spacer()
                     }
-//                    HStack{
-//                        Text("Can start using this Online Stor after create account or Sign in")
-//                            .font(Font.custom("Georgia", size: 16))
-//                            .fontWeight(.regular)
-//                            .foregroundColor(Color.gray)
-//                            .padding(.leading, 30.0)
-//                            .padding(.top, 5.0)
-//                        Spacer()
-//                    }
-//                    Image("shoppingbro")
-//                        .resizable()
-//                        .aspectRatio(contentMode: .fit)
-//                        .frame(height:UIScreen.main.bounds.height/3.9)
-//                        .opacity(0.8)
                     if(errorMessage == ""){
-                     
+                        
                     }else{
                         Text(errorMessage)
                             .font(Font.custom("Georgia", size: 16))
@@ -69,7 +56,6 @@ struct SignUpView: View {
                         TextView(title: "Email Address", text: $email)
                         TextView(title: "Phone Number", text: $phoneNumber)
                         SecureView(title: "Password", text: $password)
-                        
                     }
                     .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
                     
@@ -94,35 +80,38 @@ struct SignUpView: View {
                                                 errorMessage = ""
                                                 print(response)
                                                 UserDefaults.standard.set(self.name, forKey: "name")
-                                                loading = false
                                                 isActiveLink.toggle()
+                                                loading = false
                                                 break
                                             case .failure(_):
-                                            
                                                 if let data = response.data, let str = String(data: data, encoding: String.Encoding.utf8){
                                                     print("Server Error: " + str)
                                                     errorMessage = str
+                                                    isActiveLink.toggle()
                                                     loading = false
-
                                                 }
-                                               
                                             }
                                         }
                                        },
                                        width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/45)
                         }
                     }
-                    Text("Already Have an account? Sign In")
-                        .font(Font.custom("Georgia", size: 14))
-                        .fontWeight(.regular)
-                        .foregroundColor(Color.gray)
-                        .padding(.top, 30.0)
+                    NavigationLink(destination: SignInView(), isActive:$isActiveLinkSignIn) {
+                        Button(action: {
+                            isActiveLinkSignIn.toggle()
+                        }) {
+                            Text("Already Have an account? Sign In")
+                                .font(Font.custom("Georgia", size: 14))
+                                .fontWeight(.regular)
+                                .foregroundColor(Color.gray)
+                                .padding(.top, 30.0)
+                        }
+                    }
                 }
             }
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
         }
-        
     }
 }
 

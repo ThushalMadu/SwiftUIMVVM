@@ -13,6 +13,7 @@
 		A30A50EB26F4C90E00C8C064 /* SecureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30A50EA26F4C90E00C8C064 /* SecureView.swift */; };
 		A30A50F326F5099D00C8C064 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30A50F226F5099D00C8C064 /* HomeView.swift */; };
 		A30A50F826F509EF00C8C064 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30A50F726F509EF00C8C064 /* ProfileView.swift */; };
+		A322B5F326FBC82D00C95A10 /* OrderConfirmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A322B5F226FBC82D00C95A10 /* OrderConfirmView.swift */; };
 		A3419C7D26FA7AC00001305E /* CornerRadiusStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3419C7C26FA7AC00001305E /* CornerRadiusStyle.swift */; };
 		A362E9BA26E4A81D00E227DA /* ShoppingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A362E9B926E4A81D00E227DA /* ShoppingItem.swift */; };
 		A362E9C326E4AA5700E227DA /* ItemApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A362E9C226E4AA5700E227DA /* ItemApiService.swift */; };
@@ -64,6 +65,7 @@
 		A30A50EA26F4C90E00C8C064 /* SecureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureView.swift; sourceTree = "<group>"; };
 		A30A50F226F5099D00C8C064 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		A30A50F726F509EF00C8C064 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		A322B5F226FBC82D00C95A10 /* OrderConfirmView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderConfirmView.swift; sourceTree = "<group>"; };
 		A3419C7C26FA7AC00001305E /* CornerRadiusStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusStyle.swift; sourceTree = "<group>"; };
 		A362E9B926E4A81D00E227DA /* ShoppingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingItem.swift; sourceTree = "<group>"; };
 		A362E9C226E4AA5700E227DA /* ItemApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemApiService.swift; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				A3F47D0126E2715000B61D16 /* ThirdView.swift */,
 				A3F47CFC26E248AB00B61D16 /* SecondView.swift */,
 				A3B776D726E637B700749FF5 /* SingleItemView.swift */,
+				A322B5F226FBC82D00C95A10 /* OrderConfirmView.swift */,
 				A30A50F226F5099D00C8C064 /* HomeView.swift */,
 				A30A50F726F509EF00C8C064 /* ProfileView.swift */,
 				A362E9CA26E4AC6F00E227DA /* ApiView.swift */,
@@ -388,6 +391,7 @@
 				A3F47CD126E2425300B61D16 /* ContentView.swift in Sources */,
 				A3CB153126E7EDEA00A0028C /* SignUpView.swift in Sources */,
 				A392722126F29CFF00C74A68 /* FloatingButton.swift in Sources */,
+				A322B5F326FBC82D00C95A10 /* OrderConfirmView.swift in Sources */,
 				A3DAC7F226E930C400C3F1D8 /* SignUpService.swift in Sources */,
 				A30A50F826F509EF00C8C064 /* ProfileView.swift in Sources */,
 				A3B776E226E6A5FE00749FF5 /* ButtonViewStyle.swift in Sources */,

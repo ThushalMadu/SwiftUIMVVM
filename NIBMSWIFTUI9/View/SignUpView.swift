@@ -26,7 +26,7 @@ struct SignUpView: View {
             ScrollView {
                 VStack{
                     HStack{
-                        Text("Welcome Back")
+                        Text("Welcome to High Burger 👋")
                             .font(Font.custom("Georgia", size: 30))
                             .fontWeight(.semibold)
                             .padding(.leading, 30.0)
@@ -40,6 +40,7 @@ struct SignUpView: View {
                             .foregroundColor(Color.gray)
                             .padding([.leading, .bottom], 30.0)
                             .padding(.top, 5.0)
+                            .padding(.trailing, 40.0)
                         Spacer()
                     }
                     if(errorMessage == ""){

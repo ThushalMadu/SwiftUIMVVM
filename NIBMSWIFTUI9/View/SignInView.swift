@@ -78,7 +78,10 @@ struct SignInView: View {
                                         switch (response.result) {
                                         case .success:
                                             errorMessageLogin = ""
-                                            print(response)
+                                            if let data = response.data, let str = String(data: data, encoding: String.Encoding.utf8){
+                                                print(" " + str)
+                                              
+                                            }
                                             UserDefaults.standard.set(self.email, forKey: "email")
                                             isActiveLinkLogin.toggle()
                                             loading = false

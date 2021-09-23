@@ -12,7 +12,7 @@ struct ApiView: View {
     @State var shoppingItems = [ShoppingItem]()
     @StateObject var itemApiService = ItemApiService()
     @State private var isActive = false
-    @State private var name = UserDefaults.standard.string(forKey: "name")
+    @State private var email = UserDefaults.standard.string(forKey: "email")
     
     var body: some View {
         if(itemApiService.loading){

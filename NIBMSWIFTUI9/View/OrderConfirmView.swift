@@ -108,8 +108,8 @@ struct OrderConfirmView: View {
                     .fontWeight(.regular)
                     .padding(.leading, 30.0)
                 Spacer()
-                //                Text("Rs .\(String(cart.itemTotol))")
-                Text("Rs .4300")
+                                Text("Rs .\(String(cart.itemTotol))")
+//                Text("Rs .4300")
                     .font(Font.custom("Georgia", size: 18))
                     .fontWeight(.regular)
                     .foregroundColor(Color.orange)
@@ -123,7 +123,6 @@ struct OrderConfirmView: View {
                 .padding(.top, 50.0)
             Spacer()
         }
-        
     }
 }
 

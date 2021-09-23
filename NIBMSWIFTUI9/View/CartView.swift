@@ -9,7 +9,8 @@ import SwiftUI
 
 struct CartView: View {
     @EnvironmentObject var cart: CartViewModel
-    
+    @State private var isActiveLink = false
+
     var body: some View {
         VStack{
             HStack{
@@ -59,6 +60,7 @@ struct CartView: View {
                                             .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                                     }
                                     Spacer()
+                                    
                                     Button(action: {
                                         cart.remove(item: Cart(productName: item.productName, price: item.price, qty: item.qty))
                                     }) {
@@ -88,11 +90,13 @@ struct CartView: View {
                         }
                         .padding(.top)
                         Spacer()
-                        ButtonView(title: "Checkout",
-                                   function: {
-                                    
-                                   },
-                                   width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/45)
+                        NavigationLink(destination: OrderConfirmView(), isActive: $isActiveLink) {
+                            ButtonView(title: "Checkout",
+                                       function: {
+                                        isActiveLink.toggle()
+                                       },
+                                       width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/45)
+                        }
                         Spacer()
                     }.frame(height: 150)
                     .background(

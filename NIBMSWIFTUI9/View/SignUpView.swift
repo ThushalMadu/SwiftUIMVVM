@@ -80,7 +80,7 @@ struct SignUpView: View {
                                             case .success:
                                                 errorMessage = ""
                                                 print(response)
-                                                UserDefaults.standard.set(self.name, forKey: "name")
+                                                UserDefaults.standard.set(self.email, forKey: "email")
                                                 isActiveLink.toggle()
                                                 loading = false
                                                 break

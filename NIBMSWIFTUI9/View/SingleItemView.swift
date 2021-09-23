@@ -95,8 +95,8 @@ struct SingleItemView: View {
             
         }
         
-//        .navigationBarBackButtonHidden(true)
-//        .navigationBarHidden(true)
+        //        .navigationBarBackButtonHidden(true)
+        //        .navigationBarHidden(true)
     }
 }
 

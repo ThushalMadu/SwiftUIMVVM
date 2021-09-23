@@ -11,6 +11,7 @@ struct OrderConfirmView: View {
     
     @State var isMarked = false
     @EnvironmentObject var cart: CartViewModel
+    @State private var isActiveLink = false
     
     var body: some View {
         VStack {
@@ -108,19 +109,21 @@ struct OrderConfirmView: View {
                     .fontWeight(.regular)
                     .padding(.leading, 30.0)
                 Spacer()
-                                Text("Rs .\(String(cart.itemTotol))")
-//                Text("Rs .4300")
+                Text("Rs .\(String(cart.itemTotol))")
+                    //                Text("Rs .4300")
                     .font(Font.custom("Georgia", size: 18))
                     .fontWeight(.regular)
                     .foregroundColor(Color.orange)
                     .padding(.trailing, 30.0)
             }.padding(.top, 30.0)
-            ButtonView(title: "Confirm Your Order",
-                       function: {
-                        
-                       },
-                       width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/45)
-                .padding(.top, 50.0)
+            NavigationLink(destination: ConfirmOrderView(), isActive: $isActiveLink) {
+                ButtonView(title: "Confirm Your Order",
+                           function: {
+                            isActiveLink.toggle()
+                           },
+                           width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/45)
+                    .padding(.top, 50.0)
+            }
             Spacer()
         }
     }

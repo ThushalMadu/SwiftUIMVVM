@@ -88,7 +88,7 @@ struct SignUpView: View {
                                                 if let data = response.data, let str = String(data: data, encoding: String.Encoding.utf8){
                                                     print("Server Error: " + str)
                                                     errorMessage = str
-                                                    isActiveLink.toggle()
+                                                    //                                                    isActiveLink.toggle()
                                                     loading = false
                                                 }
                                             }

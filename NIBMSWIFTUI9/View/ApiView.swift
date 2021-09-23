@@ -72,7 +72,7 @@ struct ApiView: View {
                                 .fontWeight(.medium)
                                 .foregroundColor(Color.black)
                                 .multilineTextAlignment(.center)
-                                .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+                                .padding(.all)
                         }
                     }
                 }.onAppear() {
@@ -81,8 +81,6 @@ struct ApiView: View {
                     }
                 }
             }
-            
-            
         }
     }
 }

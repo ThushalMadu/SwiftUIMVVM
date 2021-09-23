@@ -14,8 +14,10 @@ struct SignInView: View {
     @State private var isActiveLinkLogin = false
     @State private var isActiveLinkSignUp = false
     @State private var loading = false
+    @StateObject var signInService = SignInService()
+    
     let url = "https://aqueous-temple-31849.herokuapp.com/users/login"
-
+    
     var body: some View {
         ScrollView {
             VStack{
@@ -46,10 +48,10 @@ struct SignInView: View {
                         .padding(.top, 5.0)
                     Spacer()
                 }
-                if(errorMessageLogin == ""){
+                if(signInService.errorMessage == ""){
                     
                 }else{
-                    Text(errorMessageLogin)
+                    Text(signInService.errorMessage)
                         .font(Font.custom("Georgia", size: 16))
                         .fontWeight(.regular)
                         .foregroundColor(Color.red)
@@ -62,38 +64,13 @@ struct SignInView: View {
                 .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .topLeading)
                 
                 .padding([.top, .leading, .bottom], 30.0)
-                NavigationLink(destination: HomeView(), isActive:$isActiveLinkLogin) {
-                    if(loading){
+                NavigationLink(destination: HomeView(), isActive:$signInService.loggedIn) {
+                    if(signInService.loading){
                         ProgressView("Please wait...").progressViewStyle(CircularProgressViewStyle(tint: Color.yellow)).scaleEffect(1, anchor: .center)
                     }else{
                         ButtonView(title: "Sign In",
                                    function: {
-                                    let parameters: Parameters=[
-                                        "email":email,
-                                        "password":password,
-                                    ]
-                                    loading = true
-                                    AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: [:]).responseJSON {
-                                        response in
-                                        switch (response.result) {
-                                        case .success:
-                                            errorMessageLogin = ""
-                                            if let data = response.data, let str = String(data: data, encoding: String.Encoding.utf8){
-                                                print(" " + str)
-                                              
-                                            }
-                                            UserDefaults.standard.set(self.email, forKey: "email")
-                                            isActiveLinkLogin.toggle()
-                                            loading = false
-                                            break
-                                        case .failure(_):
-                                            if let data = response.data, let str = String(data: data, encoding: String.Encoding.utf8){
-                                                print("Server Error: " + str)
-                                                errorMessageLogin = str
-                                                loading = false
-                                            }
-                                        }
-                                    }
+                                    signInService.loginFun(email: email, password: password)
                                    },
                                    width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/45)
                     }
@@ -111,7 +88,7 @@ struct SignInView: View {
                             .foregroundColor(Color.gray)
                             .padding(.top, 30.0)
                     }
-                }
+                                }
             }
         }
         .navigationBarHidden(true)

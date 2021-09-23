@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ProfileView: View {
     @State private var email = UserDefaults.standard.string(forKey: "email")
-
+    
     var body: some View {
         VStack{
             HStack{
@@ -60,7 +60,7 @@ struct ProfileView: View {
                             .foregroundColor(Color.black)
                     }.padding(.leading, 30.0)
                     Spacer()
-
+                    
                     Image(systemName: "chevron.forward")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
@@ -78,7 +78,7 @@ struct ProfileView: View {
                             .foregroundColor(Color.black)
                     }.padding(.leading, 30.0)
                     Spacer()
-
+                    
                     Image(systemName: "chevron.forward")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
@@ -97,7 +97,7 @@ struct ProfileView: View {
                             .foregroundColor(Color.black)
                     }.padding(.leading, 30.0)
                     Spacer()
-
+                    
                     Image(systemName: "chevron.forward")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
@@ -116,7 +116,7 @@ struct ProfileView: View {
                             .foregroundColor(Color.black)
                     }.padding(.leading, 30.0)
                     Spacer()
-
+                    
                     Image(systemName: "chevron.forward")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
@@ -135,7 +135,7 @@ struct ProfileView: View {
                             .foregroundColor(Color.black)
                     }.padding(.leading, 30.0)
                     Spacer()
-
+                    
                     Image(systemName: "chevron.forward")
                         .resizable()
                         .aspectRatio(contentMode: .fit)

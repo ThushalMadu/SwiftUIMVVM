@@ -10,10 +10,16 @@ import SwiftUI
 @main
 struct NIBMSWIFTUI9App: App {
     @StateObject private var order = CartViewModel()
-
+    let email = UserDefaults.standard.string(forKey: "email")
+    
     var body: some Scene {
         WindowGroup {
-            SignUpView().environmentObject(order)
+                        SignUpView().environmentObject(order)
+//            if email == nil {
+//                SignUpView().environmentObject(order)
+//            }else{
+//                ApiView().environmentObject(order)
+//            }
         }
     }
 }

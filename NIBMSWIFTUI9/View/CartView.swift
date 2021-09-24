@@ -10,15 +10,14 @@ import SwiftUI
 struct CartView: View {
     @EnvironmentObject var cart: CartViewModel
     @State private var isActiveLink = false
-
+    var cartStringData = CartStringData()
+    
+    
     var body: some View {
         VStack{
             HStack{
                 VStack(alignment: .leading){
-                    Text("Your Cart")
-                        .font(Font.custom("Georgia", size: 35))
-                        .fontWeight(.semibold)
-                        .foregroundColor(Color.black)
+                    TextTitle(title: cartStringData.lbl_cart, fontSize: 35, fontTitleWeight: .semibold)
                         .padding(.top, 5.0)
                 }
                 Spacer()
@@ -31,7 +30,7 @@ struct CartView: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(height:UIScreen.main.bounds.height/3.5)
                     .opacity(0.8)
-                Text("Add Item to Cart")
+                Text(cartStringData.lbl_addEmptyItem)
                     .font(Font.custom("Georgia", size: 16))
                     .fontWeight(.regular)
                     .foregroundColor(Color.black)
@@ -60,7 +59,6 @@ struct CartView: View {
                                             .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
                                     }
                                     Spacer()
-                                    
                                     Button(action: {
                                         cart.remove(item: Cart(productName: item.productName, price: item.price, qty: item.qty))
                                     }) {
@@ -76,22 +74,16 @@ struct CartView: View {
                     Spacer()
                     VStack{
                         HStack{
-                            Text("Total Payment")
-                                .font(Font.custom("Georgia", size: 18))
-                                .fontWeight(.regular)
-                                .foregroundColor(Color.black)
+                            TextTitle(title: cartStringData.lbl_totalPayment, fontSize: 18, fontTitleWeight: .regular)
                                 .padding(.leading, 30.0)
                             Spacer()
-                            Text("Rs .\(String(cart.itemTotol))")
-                                .font(Font.custom("Georgia", size: 18))
-                                .fontWeight(.regular)
-                                .foregroundColor(Color.orange)
+                            TextTitle(title: "Rs .\(String(cart.itemTotol))", fontSize: 18, fontTitleWeight: .regular,fontColor: Color.orange)
                                 .padding(.trailing, 30.0)
                         }
                         .padding(.top)
                         Spacer()
                         NavigationLink(destination: OrderConfirmView(), isActive: $isActiveLink) {
-                            ButtonView(title: "Checkout",
+                            ButtonView(title: cartStringData.btn_checkOut,
                                        function: {
                                         isActiveLink.toggle()
                                        },
@@ -100,11 +92,11 @@ struct CartView: View {
                         Spacer()
                     }.frame(height: 150)
                     .background(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .fill(Color.white)
-                                    .shadow(color: Color.gray.opacity(0.4), radius: 5, x: 1, y: 3)
-                        )
-
+                        RoundedRectangle(cornerRadius: 10)
+                            .fill(Color.white)
+                            .shadow(color: Color.gray.opacity(0.4), radius: 5, x: 1, y: 3)
+                    )
+                    
                     
                 }
             }

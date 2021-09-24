@@ -8,24 +8,27 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    var homeStrings = HomeStringData()
+    
     var body: some View {
         TabView {
             ApiView().tabItem {
                 Image(systemName: "list.dash")
-                Text("Home")
-            }.tag("Home")
+                Text(homeStrings.lbl_home)
+            }.tag(homeStrings.lbl_home)
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
             CartView().tabItem {
                 Image(systemName: "cart")
-                Text("Cart")
-            }.tag("Cart")
+                Text(homeStrings.lbl_cart)
+            }.tag(homeStrings.lbl_cart)
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
             ProfileView().tabItem {
                 Image(systemName: "person.circle")
-                Text("Profile")
-            }.tag("Profile")
+                Text(homeStrings.lbl_profile)
+            }.tag(homeStrings.lbl_profile)
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
         }.accentColor(.orange)

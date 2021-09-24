@@ -25,10 +25,11 @@ class SignInService: ObservableObject {
             response in
             switch (response.result) {
             case .success:
+                UserDefaults.standard.set(email, forKey: "email")
                 self.errorMessage = ""
                 print(response)
-                self.loading = false
                 self.loggedIn = true
+                self.loading = false
                 break
             case .failure:
                 if let data = response.data, let str = String(data: data, encoding: String.Encoding.utf8){

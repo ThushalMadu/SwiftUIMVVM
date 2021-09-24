@@ -9,23 +9,37 @@ import Foundation
 import Alamofire
 
 class SignUpService:ObservableObject {
-    let parameters = [
-        "username": "foo",
-        "password": "123456"
-    ]
-//    let userModel: Parameters = [UserModel]
-    
     
     let url = "https://aqueous-temple-31849.herokuapp.com/users/addUser"
-    func sendPostMethod() {
-        
+    @Published var errorMessage = ""
+    @Published var loading = false
+    @Published var loggedIn = false
+    
+    func signUpFun(name: String, email: String, phone_number: String, password: String) {
+        let parameters: Parameters=[
+            "name":name,
+            "email":email,
+            "phone_number":phone_number,
+            "password":password,
+        ]
+        loading = true
         AF.request(url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: [:]).responseJSON {
             response in
             switch (response.result) {
             case .success:
+                UserDefaults.standard.set(email, forKey: "email")
+                self.errorMessage = ""
                 print(response)
+                self.loggedIn = true
+                self.loading = false
                 break
             case .failure:
+                if let data = response.data, let str = String(data: data, encoding: String.Encoding.utf8){
+                    print("Server Error: " + str)
+                    self.errorMessage = str
+                    self.loading = false
+                    self.loggedIn = false
+                }
                 print(Error.self)
             }
         }

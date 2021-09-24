@@ -15,6 +15,7 @@ struct SignInView: View {
     @State private var isActiveLinkSignUp = false
     @State private var loading = false
     @StateObject var signInService = SignInService()
+    var signInText = SignInStringData()
     
     let url = "https://aqueous-temple-31849.herokuapp.com/users/login"
     
@@ -23,27 +24,19 @@ struct SignInView: View {
             VStack{
                 Spacer()
                 HStack{
-                    Text("Let's sign you in")
-                        .font(Font.custom("Georgia", size: 30))
-                        .fontWeight(.semibold)
+                    TextTitle(title: signInText.lbl_titleSignIn, fontSize: 30, fontTitleWeight: .semibold)
                         .padding(.leading, 30.0)
                         .padding(.top, 20.0)
                     Spacer()
                 }
                 HStack{
-                    Text("Welcome back you have been missed!")
-                        .font(Font.custom("Georgia", size: 14))
-                        .fontWeight(.regular)
-                        .foregroundColor(Color.black)
+                    TextTitle(title: signInText.lbl_desSignIn, fontSize: 14, fontTitleWeight: .regular)
                         .padding([.leading], 30.0)
                         .padding(.top, 5.0)
                     Spacer()
                 }
                 HStack{
-                    Text("you have been missed!")
-                        .font(Font.custom("Georgia", size: 14))
-                        .fontWeight(.regular)
-                        .foregroundColor(Color.black)
+                    TextTitle(title: signInText.lbl_containSignIn, fontSize: 14, fontTitleWeight: .regular)
                         .padding([.leading, .bottom], 30.0)
                         .padding(.top, 5.0)
                     Spacer()
@@ -51,10 +44,7 @@ struct SignInView: View {
                 if(signInService.errorMessage == ""){
                     
                 }else{
-                    Text(signInService.errorMessage)
-                        .font(Font.custom("Georgia", size: 16))
-                        .fontWeight(.regular)
-                        .foregroundColor(Color.red)
+                    TextTitle(title: signInService.errorMessage, fontSize: 16, fontTitleWeight: .regular, fontColor: Color.red)
                         .padding(.vertical, 10.0)
                 }
                 VStack(alignment: .leading, spacing: 30){
@@ -66,9 +56,9 @@ struct SignInView: View {
                 .padding([.top, .leading, .bottom], 30.0)
                 NavigationLink(destination: HomeView(), isActive:$signInService.loggedIn) {
                     if(signInService.loading){
-                        ProgressView("Please wait...").progressViewStyle(CircularProgressViewStyle(tint: Color.yellow)).scaleEffect(1, anchor: .center)
+                        ProgressView(signInText.pro_progressView).progressViewStyle(CircularProgressViewStyle(tint: Color.yellow)).scaleEffect(1, anchor: .center)
                     }else{
-                        ButtonView(title: "Sign In",
+                        ButtonView(title: signInText.btn_signIn,
                                    function: {
                                     signInService.loginFun(email: email, password: password)
                                    },
@@ -82,10 +72,7 @@ struct SignInView: View {
                         isActiveLinkSignUp.toggle()
                         
                     }) {
-                        Text("Don't have an account? Sign Up")
-                            .font(Font.custom("Georgia", size: 14))
-                            .fontWeight(.regular)
-                            .foregroundColor(Color.gray)
+                        TextTitle(title: signInText.lbl_dontHaveacnt, fontSize: 14, fontTitleWeight: .regular, fontColor: Color.gray)
                             .padding(.top, 30.0)
                     }
                                 }

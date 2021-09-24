@@ -13,10 +13,11 @@ struct ApiView: View {
     @StateObject var itemApiService = ItemApiService()
     @State private var isActive = false
     @State private var email = UserDefaults.standard.string(forKey: "email")
+    var apiStringsData = ApiViewStringData()
     
     var body: some View {
         if(itemApiService.loading){
-            ProgressView("Please wait...").progressViewStyle(CircularProgressViewStyle(tint: Color.purple)).scaleEffect(1, anchor: .center)
+            ProgressView(apiStringsData.pro_pleaseWait).progressViewStyle(CircularProgressViewStyle(tint: Color.purple)).scaleEffect(1, anchor: .center)
                 .onAppear() {
                     itemApiService.loadData { (shoppingItems) in
                         self.shoppingItems = shoppingItems
@@ -28,15 +29,8 @@ struct ApiView: View {
             VStack{
                 HStack{
                     VStack(alignment: .leading){
-                        Text("Hey Thushal")
-                            .font(Font.custom("Georgia", size: 16))
-                            .fontWeight(.regular)
-                            .foregroundColor(Color.black)
-                        Text("Menu")
-                            .font(Font.custom("Georgia", size: 40))
-                            .fontWeight(.semibold)
-                            .foregroundColor(Color.black)
-                            .padding(.top, 5.0)
+                        TextTitle(title: apiStringsData.lbl_heyName, fontSize: 16, fontTitleWeight: .regular)
+                        TextTitle(title: apiStringsData.lbl_menu, fontSize: 40, fontTitleWeight: .semibold)                            .padding(.top, 5.0)
                     }
                     Spacer()
                     Image(systemName: "bell")
@@ -49,31 +43,7 @@ struct ApiView: View {
                 
                 List(shoppingItems, id: \.id) { ShoppingItem in
                     NavigationLink(destination: SingleItemView(singleItem: ShoppingItem)) {
-                        HStack {
-                            Image("burger")
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .frame(width:100, height:100)
-                            VStack(alignment: .leading){
-                                Text("\(ShoppingItem.productName)")
-                                    .fontWeight(.semibold)
-                                    .foregroundColor(Color.black)
-                                    .multilineTextAlignment(.leading)
-                                    .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-                                Text("\(ShoppingItem.calories)")
-                                    .font(.caption)
-                                    .fontWeight(.light)
-                                    .foregroundColor(Color.black)
-                                    .multilineTextAlignment(.leading)
-                                    .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-                            }
-                            Spacer()
-                            Text("LKR. \(ShoppingItem.price)")
-                                .fontWeight(.medium)
-                                .foregroundColor(Color.black)
-                                .multilineTextAlignment(.center)
-                                .padding(.all)
-                        }
+                        MainMenuCompo(imageTitle: "burger", productName: ShoppingItem.productName, calories: ShoppingItem.calories, price: "LKR. \(ShoppingItem.price)")
                     }
                 }.onAppear() {
                     itemApiService.loadData { (shoppingItems) in

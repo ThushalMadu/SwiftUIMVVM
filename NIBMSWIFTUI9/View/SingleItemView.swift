@@ -13,6 +13,7 @@ struct SingleItemView: View {
     @State var quantity = 1
     //    @ObservedObject var cartViewModel: CartViewModel = CartViewModel()
     @EnvironmentObject var cartViewModel: CartViewModel
+    var singleItemStrings = SingleItemStringData()
     
     var body: some View {
         ZStack{
@@ -66,7 +67,7 @@ struct SingleItemView: View {
                             .padding(.trailing, 30.0)
                     }
                     HStack{
-                        Text("Product Description")
+                        Text(singleItemStrings.lbl_productDescription)
                             .font(.title3)
                             .fontWeight(.medium)
                             .padding(.top, 10.0)
@@ -86,7 +87,7 @@ struct SingleItemView: View {
                 .frame(maxWidth:.infinity)
                 
                 Spacer()
-                ButtonView(title: "Add to Cart",
+                ButtonView(title: singleItemStrings.btn_addToCart,
                            function: {
                             self.cartViewModel.addToCart(item: Cart(productName: self.singleItem.productName, price: self.singleItem.price, qty: self.quantity))
                            },

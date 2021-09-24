@@ -12,21 +12,16 @@ struct OrderConfirmView: View {
     @State var isMarked = false
     @EnvironmentObject var cart: CartViewModel
     @State private var isActiveLink = false
+    var orderConfirmStrings = OrderConfirmStringData()
     
     var body: some View {
         VStack {
             VStack{
-                Text("Order Confirm")
-                    .font(Font.custom("Georgia", size: 26))
-                    .fontWeight(.regular)
+                TextTitle(title: orderConfirmStrings.lbl_orderConfirmTitle, fontSize: 26, fontTitleWeight: .regular)
                     .padding(.top, 10.0)
             }
             HStack{
-                Text("Shipping to")
-                    .font(Font.custom("Georgia", size: 20))
-                    .fontWeight(.regular)
-                    .padding(.top, 20.0)
-                    
+                TextTitle(title: orderConfirmStrings.lbl_shippingTo, fontSize: 20, fontTitleWeight: .regular)                    .padding(.top, 20.0)
                     .padding(.leading, 30.0)
                 Spacer()
             }
@@ -59,11 +54,10 @@ struct OrderConfirmView: View {
                 Spacer()
             }
             HStack{
-                Text("Payment Type")
+                Text(orderConfirmStrings.lbl_paymentType)
                     .font(Font.custom("Georgia", size: 20))
                     .fontWeight(.regular)
                     .padding(.top, 20.0)
-                    
                     .padding(.leading, 30.0)
                 Spacer()
             }
@@ -104,7 +98,7 @@ struct OrderConfirmView: View {
                 }
             }
             HStack{
-                Text("Total Payment")
+                Text(orderConfirmStrings.lbl_totalPrice)
                     .font(Font.custom("Georgia", size: 20))
                     .fontWeight(.regular)
                     .padding(.leading, 30.0)
@@ -117,7 +111,7 @@ struct OrderConfirmView: View {
                     .padding(.trailing, 30.0)
             }.padding(.top, 30.0)
             NavigationLink(destination: ConfirmOrderView(), isActive: $isActiveLink) {
-                ButtonView(title: "Confirm Your Order",
+                ButtonView(title: orderConfirmStrings.btn_confirmOrder,
                            function: {
                             isActiveLink.toggle()
                            },

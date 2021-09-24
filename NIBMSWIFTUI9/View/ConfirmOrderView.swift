@@ -10,6 +10,7 @@ import SwiftUI
 struct ConfirmOrderView: View {
     
     @State private var isActiveLink = false
+    var confirmDataString = ConfirmOrderStringData()
     
     var body: some View {
         VStack(spacing: 40.0){
@@ -18,24 +19,13 @@ struct ConfirmOrderView: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(height:UIScreen.main.bounds.height/3)
             VStack(spacing: 20.0){
-                Text("Order Sucessfuly Placed")
-                    .font(Font.custom("Georgia", size: 20))
-                    .fontWeight(.medium)
-                Text("Your order will recivece within this week")
-                    .font(Font.custom("Georgia", size: 16))
-                    .fontWeight(.regular)
-                    .foregroundColor(Color.black)
-                Text("Keep in Touch with us")
-                    .font(Font.custom("Georgia", size: 16))
-                    .fontWeight(.regular)
-                    .foregroundColor(Color.black)
-                Text("Order No : OR2634134")
-                    .font(Font.custom("Georgia", size: 18))
-                    .fontWeight(.regular)
-                    .foregroundColor(Color.black)
+                TextTitle(title: confirmDataString.lbl_confirmTitle, fontSize: 20, fontTitleWeight: .medium, fontColor: Color.black)
+                TextTitle(title: confirmDataString.lbl_orderRecieve, fontSize: 16, fontTitleWeight: .regular, fontColor: Color.black)
+                TextTitle(title: confirmDataString.lbl_keepInTouch, fontSize: 16, fontTitleWeight: .regular, fontColor: Color.black)
+                TextTitle(title: "Order No : OR2634134", fontSize: 18, fontTitleWeight: .regular, fontColor: Color.black)
             }
             NavigationLink(destination: HomeView(), isActive: $isActiveLink) {
-                ButtonView(title: "Go To Home",
+                ButtonView(title: confirmDataString.btn_goHome,
                            function: {
                             isActiveLink.toggle()
                            },

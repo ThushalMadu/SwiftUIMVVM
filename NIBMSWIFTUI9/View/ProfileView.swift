@@ -10,6 +10,7 @@ import SwiftUI
 struct ProfileView: View {
     @State private var email = UserDefaults.standard.string(forKey: "email")
     let auth = UserDefaults.standard.auth(forKey: "Auth")
+    @State private var isActivePersonal:Bool = false
     
     var profileStringData = ProfileStringData()
     var body: some View {
@@ -41,11 +42,23 @@ struct ProfileView: View {
                 Spacer()
             }
             List {
-                ProfileListCompo(imageTitle: "person.crop.circle.fill", title: profileStringData.lbl_personal)
-                ProfileListCompo(imageTitle: "gear", title: profileStringData.lbl_settings).padding(.top)
-                ProfileListCompo(imageTitle: "message.circle.fill", title: profileStringData.lbl_faqs).padding(.top)
-                ProfileListCompo(imageTitle: "book.closed.fill", title: profileStringData.lbl_handbook).padding(.top)
-                ProfileListCompo(imageTitle: "person.3.fill", title: profileStringData.lbl_community).padding(.top)
+                NavigationLink(destination: PersonalDataView(), isActive:$isActivePersonal) {
+                    ProfileListCompo(imageTitle: "person.crop.circle.fill", function: {
+                        isActivePersonal.toggle()
+                    }, title: profileStringData.lbl_personal)
+                }
+                ProfileListCompo(imageTitle: "gear", function: {
+                    print("click settings")
+                }, title: profileStringData.lbl_settings ).padding(.top)
+                ProfileListCompo(imageTitle: "message.circle.fill", function: {
+                    print("click message")
+                }, title: profileStringData.lbl_faqs).padding(.top)
+                ProfileListCompo(imageTitle: "book.closed.fill", function: {
+                    print("click book")
+                }, title: profileStringData.lbl_handbook).padding(.top)
+                ProfileListCompo(imageTitle: "person.3.fill", function: {
+                    print("click person")
+                }, title: profileStringData.lbl_community).padding(.top)
             }
             .padding(.top, 10.0)
             Spacer()

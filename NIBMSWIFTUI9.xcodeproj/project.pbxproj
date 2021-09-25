@@ -43,6 +43,9 @@
 		A3C9C84026FD1C88009E2708 /* SignInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C9C83F26FD1C88009E2708 /* SignInService.swift */; };
 		A3CB153126E7EDEA00A0028C /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CB153026E7EDEA00A0028C /* SignUpView.swift */; };
 		A3D3C24826FF58D100DC6449 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D3C24726FF58D100DC6449 /* UserData.swift */; };
+		A3D3C24D26FFA3DC00DC6449 /* PersonalDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D3C24C26FFA3DC00DC6449 /* PersonalDataView.swift */; };
+		A3D3C25226FFAE9200DC6449 /* PersonalDataString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D3C25126FFAE9200DC6449 /* PersonalDataString.swift */; };
+		A3D3C25726FFB0A800DC6449 /* PersonalDataTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D3C25626FFB0A800DC6449 /* PersonalDataTextView.swift */; };
 		A3DAC7ED26E9307600C3F1D8 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A3DAC7EC26E9307600C3F1D8 /* Alamofire */; };
 		A3DAC7F226E930C400C3F1D8 /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DAC7F126E930C400C3F1D8 /* SignUpService.swift */; };
 		A3DAC7F726E94B7C00C3F1D8 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DAC7F626E94B7C00C3F1D8 /* UserModel.swift */; };
@@ -110,6 +113,9 @@
 		A3C9C83F26FD1C88009E2708 /* SignInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInService.swift; sourceTree = "<group>"; };
 		A3CB153026E7EDEA00A0028C /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		A3D3C24726FF58D100DC6449 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		A3D3C24C26FFA3DC00DC6449 /* PersonalDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataView.swift; sourceTree = "<group>"; };
+		A3D3C25126FFAE9200DC6449 /* PersonalDataString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataString.swift; sourceTree = "<group>"; };
+		A3D3C25626FFB0A800DC6449 /* PersonalDataTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalDataTextView.swift; sourceTree = "<group>"; };
 		A3DAC7F126E930C400C3F1D8 /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
 		A3DAC7F626E94B7C00C3F1D8 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		A3F47CCB26E2425300B61D16 /* NIBMSWIFTUI9.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NIBMSWIFTUI9.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,6 +169,7 @@
 				A306797626FE51C100F2D14D /* HomeStringData.swift */,
 				A306798A26FE5D0900F2D14D /* ConfirmOrderStringData.swift */,
 				A306798F26FE5EAF00F2D14D /* OrderConfirmStringData.swift */,
+				A3D3C25126FFAE9200DC6449 /* PersonalDataString.swift */,
 				A306798526FE5BA000F2D14D /* ProfileStringData.swift */,
 				A306798026FE582600F2D14D /* CartStringData.swift */,
 				A306799426FE5FCE00F2D14D /* SingleItemStringData.swift */,
@@ -181,6 +188,7 @@
 				A322B5F226FBC82D00C95A10 /* OrderConfirmView.swift */,
 				A3A08FD226FC945D00328481 /* ConfirmOrderView.swift */,
 				A30A50F226F5099D00C8C064 /* HomeView.swift */,
+				A3D3C24C26FFA3DC00DC6449 /* PersonalDataView.swift */,
 				A30A50F726F509EF00C8C064 /* ProfileView.swift */,
 				A362E9CA26E4AC6F00E227DA /* ApiView.swift */,
 				A3CB153026E7EDEA00A0028C /* SignUpView.swift */,
@@ -200,6 +208,7 @@
 				A3B776DC26E6A51000749FF5 /* ButtonView.swift */,
 				A306795E26FDF14700F2D14D /* ProfileListCompo.swift */,
 				A306794E26FDE37F00F2D14D /* TextTitle.swift */,
+				A3D3C25626FFB0A800DC6449 /* PersonalDataTextView.swift */,
 				A306796326FDF89F00F2D14D /* MainMenuCompo.swift */,
 				A305D79926E390600089D617 /* TextViewStyle.swift */,
 			);
@@ -427,6 +436,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3D3C25226FFAE9200DC6449 /* PersonalDataString.swift in Sources */,
 				A3F47D0226E2715000B61D16 /* ThirdView.swift in Sources */,
 				A306795F26FDF14700F2D14D /* ProfileListCompo.swift in Sources */,
 				A362E9C326E4AA5700E227DA /* ItemApiService.swift in Sources */,
@@ -436,7 +446,9 @@
 				A306797726FE51C100F2D14D /* HomeStringData.swift in Sources */,
 				A362E9BA26E4A81D00E227DA /* ShoppingItem.swift in Sources */,
 				A306797226FE4FBB00F2D14D /* SignInStringData.swift in Sources */,
+				A3D3C25726FFB0A800DC6449 /* PersonalDataTextView.swift in Sources */,
 				A306796426FDF89F00F2D14D /* MainMenuCompo.swift in Sources */,
+				A3D3C24D26FFA3DC00DC6449 /* PersonalDataView.swift in Sources */,
 				A371004526EA9B9200B654FA /* CartModel.swift in Sources */,
 				A3A08FD326FC945D00328481 /* ConfirmOrderView.swift in Sources */,
 				A30A50E626F4C0B000C8C064 /* UserAuth.swift in Sources */,

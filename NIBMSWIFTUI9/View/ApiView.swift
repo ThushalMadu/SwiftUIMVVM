@@ -13,6 +13,8 @@ struct ApiView: View {
     @StateObject var itemApiService = ItemApiService()
     @State private var isActive = false
     @State private var email = UserDefaults.standard.string(forKey: "email")
+    let auth = UserDefaults.standard.auth(forKey: "Auth")
+    
     var apiStringsData = ApiViewStringData()
     
     var body: some View {
@@ -29,8 +31,8 @@ struct ApiView: View {
             VStack{
                 HStack{
                     VStack(alignment: .leading){
-                        TextTitle(title: apiStringsData.lbl_heyName, fontSize: 16, fontTitleWeight: .regular)
-                        TextTitle(title: apiStringsData.lbl_menu, fontSize: 40, fontTitleWeight: .semibold)                            .padding(.top, 5.0)
+                        TextTitle(title: "Hey \(auth!.userExists.name)", fontSize: 16, fontTitleWeight: .regular)
+                        TextTitle(title: apiStringsData.lbl_menu, fontSize: 40, fontTitleWeight: .semibold).padding(.top, 5.0)
                     }
                     Spacer()
                     Image(systemName: "bell")

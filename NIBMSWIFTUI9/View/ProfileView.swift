@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ProfileView: View {
     @State private var email = UserDefaults.standard.string(forKey: "email")
+    let auth = UserDefaults.standard.auth(forKey: "Auth")
+    
     var profileStringData = ProfileStringData()
     var body: some View {
         VStack{
@@ -30,7 +32,7 @@ struct ProfileView: View {
                     .padding(.leading, 30.0)
                     .cornerRadius(10)
                 VStack(alignment: .leading){
-                    TextTitle(title: "Thushal Madhushankha", fontSize: 16, fontTitleWeight: .regular, fontColor: Color.black)
+                    TextTitle(title: auth!.userExists.name, fontSize: 16, fontTitleWeight: .regular, fontColor: Color.black)
                         .padding(.top, 10.0)
                     TextTitle(title: email!, fontSize: 14, fontTitleWeight: .light, fontColor: Color.gray)
                         .padding(.top, 3.0)

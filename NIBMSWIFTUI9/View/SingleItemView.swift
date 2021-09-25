@@ -11,7 +11,6 @@ struct SingleItemView: View {
     
     var singleItem: ShoppingItem
     @State var quantity = 1
-    //    @ObservedObject var cartViewModel: CartViewModel = CartViewModel()
     @EnvironmentObject var cartViewModel: CartViewModel
     var singleItemStrings = SingleItemStringData()
     

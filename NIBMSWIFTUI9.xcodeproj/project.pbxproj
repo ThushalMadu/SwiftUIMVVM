@@ -42,6 +42,7 @@
 		A3B776E226E6A5FE00749FF5 /* ButtonViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B776E126E6A5FE00749FF5 /* ButtonViewStyle.swift */; };
 		A3C9C84026FD1C88009E2708 /* SignInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C9C83F26FD1C88009E2708 /* SignInService.swift */; };
 		A3CB153126E7EDEA00A0028C /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CB153026E7EDEA00A0028C /* SignUpView.swift */; };
+		A3D3C24826FF58D100DC6449 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3D3C24726FF58D100DC6449 /* UserData.swift */; };
 		A3DAC7ED26E9307600C3F1D8 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = A3DAC7EC26E9307600C3F1D8 /* Alamofire */; };
 		A3DAC7F226E930C400C3F1D8 /* SignUpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DAC7F126E930C400C3F1D8 /* SignUpService.swift */; };
 		A3DAC7F726E94B7C00C3F1D8 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3DAC7F626E94B7C00C3F1D8 /* UserModel.swift */; };
@@ -108,6 +109,7 @@
 		A3B776E126E6A5FE00749FF5 /* ButtonViewStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewStyle.swift; sourceTree = "<group>"; };
 		A3C9C83F26FD1C88009E2708 /* SignInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInService.swift; sourceTree = "<group>"; };
 		A3CB153026E7EDEA00A0028C /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		A3D3C24726FF58D100DC6449 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
 		A3DAC7F126E930C400C3F1D8 /* SignUpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpService.swift; sourceTree = "<group>"; };
 		A3DAC7F626E94B7C00C3F1D8 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		A3F47CCB26E2425300B61D16 /* NIBMSWIFTUI9.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NIBMSWIFTUI9.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -208,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				A362E9B926E4A81D00E227DA /* ShoppingItem.swift */,
+				A3D3C24726FF58D100DC6449 /* UserData.swift */,
 				A3DAC7F626E94B7C00C3F1D8 /* UserModel.swift */,
 				A371004426EA9B9200B654FA /* CartModel.swift */,
 			);
@@ -454,6 +457,7 @@
 				A392722126F29CFF00C74A68 /* FloatingButton.swift in Sources */,
 				A306794F26FDE37F00F2D14D /* TextTitle.swift in Sources */,
 				A322B5F326FBC82D00C95A10 /* OrderConfirmView.swift in Sources */,
+				A3D3C24826FF58D100DC6449 /* UserData.swift in Sources */,
 				A3DAC7F226E930C400C3F1D8 /* SignUpService.swift in Sources */,
 				A306799526FE5FCE00F2D14D /* SingleItemStringData.swift in Sources */,
 				A30A50F826F509EF00C8C064 /* ProfileView.swift in Sources */,

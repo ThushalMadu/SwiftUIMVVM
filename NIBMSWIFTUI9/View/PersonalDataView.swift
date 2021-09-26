@@ -17,16 +17,16 @@ struct PersonalDataView: View {
             HStack{
                 VStack(alignment: .leading){
                     TextTitle(title: personalDataStrings.lbl_account, fontSize: 35, fontTitleWeight: .semibold)
-                        .padding(.top, 5.0)
                 }
                 Spacer()
             }
-            .padding([.top, .leading, .trailing], 30.0)
-            VStack(alignment: .center, spacing: 20) {
+            .padding([.leading, .trailing], 30.0)
+            VStack(alignment: .center, spacing: 40) {
                 PersonalDataTextView(title: "Name", personalName: auth!.userExists.name)
                 PersonalDataTextView(title: "Email", personalName: auth!.userExists.email)
                 PersonalDataTextView(title: "Phone Number", personalName: String(auth!.userExists.phoneNumber))
-            }.padding([.top, .leading, .trailing], 30.0)
+            }.padding([.top, .leading], 30.0)
+            .padding(.trailing, 10.0)
             Spacer()
         }
     }

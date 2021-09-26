@@ -11,6 +11,8 @@ struct ConfirmOrderView: View {
     
     @State private var isActiveLink = false
     var confirmDataString = ConfirmOrderStringData()
+    @EnvironmentObject var cart: CartViewModel
+    let randomInt = Int.random(in: 1..<1000)
     
     var body: some View {
         VStack(spacing: 40.0){
@@ -22,11 +24,13 @@ struct ConfirmOrderView: View {
                 TextTitle(title: confirmDataString.lbl_confirmTitle, fontSize: 20, fontTitleWeight: .medium, fontColor: Color.black)
                 TextTitle(title: confirmDataString.lbl_orderRecieve, fontSize: 16, fontTitleWeight: .regular, fontColor: Color.black)
                 TextTitle(title: confirmDataString.lbl_keepInTouch, fontSize: 16, fontTitleWeight: .regular, fontColor: Color.black)
-                TextTitle(title: "Order No : OR2634134", fontSize: 18, fontTitleWeight: .regular, fontColor: Color.black)
+                TextTitle(title: "Order No : OR\(String(randomInt))", fontSize: 18, fontTitleWeight: .regular, fontColor: Color.black)
             }
             NavigationLink(destination: HomeView(), isActive: $isActiveLink) {
                 ButtonView(title: confirmDataString.btn_goHome,
                            function: {
+                            cart.orderItems.removeAll()
+                            cart.itemTotol = 0
                             isActiveLink.toggle()
                            },
                            width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/45)

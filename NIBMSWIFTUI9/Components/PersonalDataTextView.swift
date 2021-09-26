@@ -14,15 +14,13 @@ struct PersonalDataTextView: View {
     
     var body: some View {
         HStack {
+            TextTitle(title: title, fontSize: 14, fontTitleWeight: .regular, fontColor: Color.gray)
             Spacer()
-            TextTitle(title: title, fontSize: 20, fontTitleWeight: .regular, fontColor: Color.gray)
-            Spacer()
-            VStack{
-                TextTitle(title: personalName, fontSize: 18, fontTitleWeight: .regular)
-                Rectangle().frame(height: 1)
+            VStack(alignment: .center){
+                TextTitle(title: personalName, fontSize: 16, fontTitleWeight: .regular)
+                Rectangle().frame(width:UIScreen.main.bounds.width/1.7, height: 1)
                     .padding(.horizontal, 20).foregroundColor(Color.gray)
             }
-            Spacer()
         }
     }
 }

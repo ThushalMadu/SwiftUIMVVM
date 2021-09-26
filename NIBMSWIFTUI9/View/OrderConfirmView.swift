@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct OrderConfirmView: View {
     
@@ -13,6 +14,7 @@ struct OrderConfirmView: View {
     @EnvironmentObject var cart: CartViewModel
     @State private var isActiveLink = false
     var orderConfirmStrings = OrderConfirmStringData()
+    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 7.929242, longitude: 81.037497), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
     
     var body: some View {
         VStack {
@@ -53,6 +55,8 @@ struct OrderConfirmView: View {
                 }
                 Spacer()
             }
+            Map(coordinateRegion: $region, showsUserLocation: true, userTrackingMode: .constant(.follow))
+                .frame(width: .infinity, height: UIScreen.main.bounds.height/7)
             HStack{
                 Text(orderConfirmStrings.lbl_paymentType)
                     .font(Font.custom("Georgia", size: 20))

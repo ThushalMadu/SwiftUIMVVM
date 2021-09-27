@@ -32,6 +32,17 @@
 		A362E9CB26E4AC6F00E227DA /* ApiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A362E9CA26E4AC6F00E227DA /* ApiView.swift */; };
 		A371004526EA9B9200B654FA /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A371004426EA9B9200B654FA /* CartModel.swift */; };
 		A371004A26EAAACD00B654FA /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A371004926EAAACD00B654FA /* CartViewModel.swift */; };
+		A3786AE727019E540012728E /* CartCompoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3786AE627019E540012728E /* CartCompoView.swift */; };
+		A3786AEC2701A4F40012728E /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3786AEB2701A4F40012728E /* TestView.swift */; };
+		A3786AF12701A78A0012728E /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3786AF02701A78A0012728E /* Card.swift */; };
+		A3786AF62701A7A20012728E /* UIStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3786AF52701A7A20012728E /* UIStateModel.swift */; };
+		A3786AFB2701A7EF0012728E /* Carousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3786AFA2701A7EF0012728E /* Carousel.swift */; };
+		A3786B002701DB370012728E /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3786AFF2701DB370012728E /* ImageLoader.swift */; };
+		A3786B052701DB760012728E /* AsyncImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3786B042701DB760012728E /* AsyncImage.swift */; };
+		A3786B0A2701E0460012728E /* TemporaryImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3786B092701E0460012728E /* TemporaryImageCache.swift */; };
+		A3786B0F2701E0C10012728E /* ImageCacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3786B0E2701E0C10012728E /* ImageCacheKey.swift */; };
+		A3786B1A2701E9F20012728E /* BannerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3786B192701E9F20012728E /* BannerModel.swift */; };
+		A3786B1F2701ED240012728E /* BannerItemService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3786B1E2701ED240012728E /* BannerItemService.swift */; };
 		A381631126F3153A00B721C6 /* HideBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381631026F3153A00B721C6 /* HideBarViewModel.swift */; };
 		A381631626F321D400B721C6 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A381631526F321D400B721C6 /* CartView.swift */; };
 		A392722126F29CFF00C74A68 /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A392722026F29CFF00C74A68 /* FloatingButton.swift */; };
@@ -102,6 +113,17 @@
 		A362E9CA26E4AC6F00E227DA /* ApiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiView.swift; sourceTree = "<group>"; };
 		A371004426EA9B9200B654FA /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
 		A371004926EAAACD00B654FA /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
+		A3786AE627019E540012728E /* CartCompoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartCompoView.swift; sourceTree = "<group>"; };
+		A3786AEB2701A4F40012728E /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		A3786AF02701A78A0012728E /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		A3786AF52701A7A20012728E /* UIStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStateModel.swift; sourceTree = "<group>"; };
+		A3786AFA2701A7EF0012728E /* Carousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carousel.swift; sourceTree = "<group>"; };
+		A3786AFF2701DB370012728E /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		A3786B042701DB760012728E /* AsyncImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImage.swift; sourceTree = "<group>"; };
+		A3786B092701E0460012728E /* TemporaryImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporaryImageCache.swift; sourceTree = "<group>"; };
+		A3786B0E2701E0C10012728E /* ImageCacheKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheKey.swift; sourceTree = "<group>"; };
+		A3786B192701E9F20012728E /* BannerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerModel.swift; sourceTree = "<group>"; };
+		A3786B1E2701ED240012728E /* BannerItemService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerItemService.swift; sourceTree = "<group>"; };
 		A381631026F3153A00B721C6 /* HideBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideBarViewModel.swift; sourceTree = "<group>"; };
 		A381631526F321D400B721C6 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		A392722026F29CFF00C74A68 /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
@@ -188,6 +210,7 @@
 				A322B5F226FBC82D00C95A10 /* OrderConfirmView.swift */,
 				A3A08FD226FC945D00328481 /* ConfirmOrderView.swift */,
 				A30A50F226F5099D00C8C064 /* HomeView.swift */,
+				A3786AEB2701A4F40012728E /* TestView.swift */,
 				A3D3C24C26FFA3DC00DC6449 /* PersonalDataView.swift */,
 				A30A50F726F509EF00C8C064 /* ProfileView.swift */,
 				A362E9CA26E4AC6F00E227DA /* ApiView.swift */,
@@ -207,7 +230,13 @@
 				A3B776E126E6A5FE00749FF5 /* ButtonViewStyle.swift */,
 				A3B776DC26E6A51000749FF5 /* ButtonView.swift */,
 				A306795E26FDF14700F2D14D /* ProfileListCompo.swift */,
+				A3786B042701DB760012728E /* AsyncImage.swift */,
+				A3786B092701E0460012728E /* TemporaryImageCache.swift */,
+				A3786B0E2701E0C10012728E /* ImageCacheKey.swift */,
+				A3786AFF2701DB370012728E /* ImageLoader.swift */,
+				A3786AFA2701A7EF0012728E /* Carousel.swift */,
 				A306794E26FDE37F00F2D14D /* TextTitle.swift */,
+				A3786AE627019E540012728E /* CartCompoView.swift */,
 				A3D3C25626FFB0A800DC6449 /* PersonalDataTextView.swift */,
 				A306796326FDF89F00F2D14D /* MainMenuCompo.swift */,
 				A305D79926E390600089D617 /* TextViewStyle.swift */,
@@ -221,6 +250,9 @@
 				A362E9B926E4A81D00E227DA /* ShoppingItem.swift */,
 				A3D3C24726FF58D100DC6449 /* UserData.swift */,
 				A3DAC7F626E94B7C00C3F1D8 /* UserModel.swift */,
+				A3786B192701E9F20012728E /* BannerModel.swift */,
+				A3786AF02701A78A0012728E /* Card.swift */,
+				A3786AF52701A7A20012728E /* UIStateModel.swift */,
 				A371004426EA9B9200B654FA /* CartModel.swift */,
 			);
 			path = Model;
@@ -235,6 +267,7 @@
 				A381631026F3153A00B721C6 /* HideBarViewModel.swift */,
 				A3DAC7F126E930C400C3F1D8 /* SignUpService.swift */,
 				A3C9C83F26FD1C88009E2708 /* SignInService.swift */,
+				A3786B1E2701ED240012728E /* BannerItemService.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -439,6 +472,8 @@
 				A3D3C25226FFAE9200DC6449 /* PersonalDataString.swift in Sources */,
 				A3F47D0226E2715000B61D16 /* ThirdView.swift in Sources */,
 				A306795F26FDF14700F2D14D /* ProfileListCompo.swift in Sources */,
+				A3786B0A2701E0460012728E /* TemporaryImageCache.swift in Sources */,
+				A3786B0F2701E0C10012728E /* ImageCacheKey.swift in Sources */,
 				A362E9C326E4AA5700E227DA /* ItemApiService.swift in Sources */,
 				A306798B26FE5D0900F2D14D /* ConfirmOrderStringData.swift in Sources */,
 				A305D79A26E390600089D617 /* TextViewStyle.swift in Sources */,
@@ -447,6 +482,7 @@
 				A362E9BA26E4A81D00E227DA /* ShoppingItem.swift in Sources */,
 				A306797226FE4FBB00F2D14D /* SignInStringData.swift in Sources */,
 				A3D3C25726FFB0A800DC6449 /* PersonalDataTextView.swift in Sources */,
+				A3786B002701DB370012728E /* ImageLoader.swift in Sources */,
 				A306796426FDF89F00F2D14D /* MainMenuCompo.swift in Sources */,
 				A3D3C24D26FFA3DC00DC6449 /* PersonalDataView.swift in Sources */,
 				A371004526EA9B9200B654FA /* CartModel.swift in Sources */,
@@ -455,9 +491,14 @@
 				A306797C26FE532800F2D14D /* ApiViewStringData.swift in Sources */,
 				A371004A26EAAACD00B654FA /* CartViewModel.swift in Sources */,
 				A3419C7D26FA7AC00001305E /* CornerRadiusStyle.swift in Sources */,
+				A3786AF62701A7A20012728E /* UIStateModel.swift in Sources */,
 				A362E9CB26E4AC6F00E227DA /* ApiView.swift in Sources */,
 				A3933A8226F9BA9900875302 /* SignInView.swift in Sources */,
+				A3786AE727019E540012728E /* CartCompoView.swift in Sources */,
+				A3786B052701DB760012728E /* AsyncImage.swift in Sources */,
+				A3786AFB2701A7EF0012728E /* Carousel.swift in Sources */,
 				A3B776DD26E6A51000749FF5 /* ButtonView.swift in Sources */,
+				A3786B1A2701E9F20012728E /* BannerModel.swift in Sources */,
 				A381631126F3153A00B721C6 /* HideBarViewModel.swift in Sources */,
 				A381631626F321D400B721C6 /* CartView.swift in Sources */,
 				A3F47CD126E2425300B61D16 /* ContentView.swift in Sources */,
@@ -466,13 +507,16 @@
 				A3CB153126E7EDEA00A0028C /* SignUpView.swift in Sources */,
 				A306798626FE5BA000F2D14D /* ProfileStringData.swift in Sources */,
 				A306799026FE5EAF00F2D14D /* OrderConfirmStringData.swift in Sources */,
+				A3786AF12701A78A0012728E /* Card.swift in Sources */,
 				A392722126F29CFF00C74A68 /* FloatingButton.swift in Sources */,
+				A3786B1F2701ED240012728E /* BannerItemService.swift in Sources */,
 				A306794F26FDE37F00F2D14D /* TextTitle.swift in Sources */,
 				A322B5F326FBC82D00C95A10 /* OrderConfirmView.swift in Sources */,
 				A3D3C24826FF58D100DC6449 /* UserData.swift in Sources */,
 				A3DAC7F226E930C400C3F1D8 /* SignUpService.swift in Sources */,
 				A306799526FE5FCE00F2D14D /* SingleItemStringData.swift in Sources */,
 				A30A50F826F509EF00C8C064 /* ProfileView.swift in Sources */,
+				A3786AEC2701A4F40012728E /* TestView.swift in Sources */,
 				A3B776E226E6A5FE00749FF5 /* ButtonViewStyle.swift in Sources */,
 				A3F47CCF26E2425300B61D16 /* NIBMSWIFTUI9App.swift in Sources */,
 				A305D78D26E37A430089D617 /* TextView.swift in Sources */,

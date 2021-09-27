@@ -39,11 +39,11 @@ struct HomeView: View {
                     .navigationBarBackButtonHidden(true)
                 }.accentColor(.orange)
                 ZStack {
-                  Circle()
-                    .foregroundColor(.orange)
+                    Circle()
+                        .foregroundColor(.orange)
                     Text("\(self.cart.orderItems.count)")
-                    .foregroundColor(.white)
-                    .font(Font.system(size: 12))
+                        .foregroundColor(.white)
+                        .font(Font.system(size: 12))
                 }
                 .frame(width: 20, height: 20)
                 .offset(x: ( ( 2 * self.badgePosition) - 0.95 ) * ( geometry.size.width / ( 2 * self.tabsCount ) ) + 2, y: -25)

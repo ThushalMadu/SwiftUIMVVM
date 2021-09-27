@@ -13,4 +13,5 @@ struct Cart :Codable, Identifiable {
     var productName: String
     var price: Int
     var qty: Int
+    var imageUrl: String
 }

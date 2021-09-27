@@ -18,10 +18,11 @@ struct SingleItemView: View {
         ZStack{
             Color.white.ignoresSafeArea()
             VStack{
-                Image("burger")
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width:UIScreen.main.bounds.width/1.5, height:UIScreen.main.bounds.height/4)
+                AsyncImage(
+                    url: URL(string:singleItem.imageUrl)!,
+                    placeholder: {Text("Loading ...")}
+                ).aspectRatio(contentMode: .fit)
+                .frame(width:UIScreen.main.bounds.width/1.5, height:UIScreen.main.bounds.height/4)
                 Spacer()
                 VStack(alignment: .leading){
                     HStack{
@@ -88,7 +89,7 @@ struct SingleItemView: View {
                 Spacer()
                 ButtonView(title: singleItemStrings.btn_addToCart,
                            function: {
-                            self.cartViewModel.addToCart(item: Cart(productName: self.singleItem.productName, price: self.singleItem.price, qty: self.quantity))
+                            self.cartViewModel.addToCart(item: Cart(productName: self.singleItem.productName, price: self.singleItem.price, qty: self.quantity, imageUrl: self.singleItem.imageUrl))
                            },
                            width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/45)
             }

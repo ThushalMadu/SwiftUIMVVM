@@ -20,7 +20,8 @@ struct SignUpView: View {
     @State private var errorMessage = ""
     @StateObject var signUpService = SignUpService()
     var signUpText = SignUpStringData()
-    
+
+
     let url = "https://aqueous-temple-31849.herokuapp.com/users/addUser"
     
     var body: some View {
@@ -69,6 +70,7 @@ struct SignUpView: View {
                     NavigationLink(destination: SignInView(), isActive:$isActiveLinkSignIn) {
                         Button(action: {
                             isActiveLinkSignIn.toggle()
+                            
                         }) {
                             TextTitle(title: signUpText.btn_alrdBtn, fontSize: 14, fontTitleWeight: .regular, fontColor: Color.gray)
                                 .padding(.top, 30.0)

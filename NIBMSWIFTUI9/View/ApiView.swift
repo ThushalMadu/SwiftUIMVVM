@@ -42,10 +42,29 @@ struct ApiView: View {
                         .foregroundColor(.orange)
                 }
                 .padding([.top, .leading, .trailing], 30.0)
+                HStack{
+                    VStack(alignment: .leading){
+                        TextTitle(title: apiStringsData.lbl_discount, fontSize: 18, fontTitleWeight: .medium)
+                    }
+                    Spacer()
+                }
+                .padding(.leading, 30.0)
+                .padding(.top, 20.0)
+                .padding(.bottom, 5.0)
                 
+                TestView()
+                HStack{
+                    VStack(alignment: .leading){
+                        TextTitle(title: apiStringsData.lbl_aLLprodcts, fontSize: 18, fontTitleWeight: .medium)
+                    }
+                    Spacer()
+                }
+                .padding(.leading, 30.0)
+                .padding(.top, 20.0)
+                .padding(.bottom, 5.0)
                 List(shoppingItems, id: \.id) { ShoppingItem in
                     NavigationLink(destination: SingleItemView(singleItem: ShoppingItem)) {
-                        MainMenuCompo(imageTitle: "burger", productName: ShoppingItem.productName, calories: ShoppingItem.calories, price: "LKR. \(ShoppingItem.price)")
+                        MainMenuCompo( productName: ShoppingItem.productName, calories: ShoppingItem.calories, price: "LKR. \(ShoppingItem.price)",imageUrl: URL(string:ShoppingItem.imageUrl)!)
                     }
                 }.onAppear() {
                     itemApiService.loadData { (shoppingItems) in

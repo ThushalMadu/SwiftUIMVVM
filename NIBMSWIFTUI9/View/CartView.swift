@@ -30,10 +30,7 @@ struct CartView: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(height:UIScreen.main.bounds.height/3.5)
                     .opacity(0.8)
-                Text(cartStringData.lbl_addEmptyItem)
-                    .font(Font.custom("Georgia", size: 16))
-                    .fontWeight(.regular)
-                    .foregroundColor(Color.black)
+                TextTitle(title: cartStringData.lbl_addEmptyItem, fontSize: 16, fontTitleWeight: .regular, fontColor: Color.black)
                     .padding(.top, 5.0)
                 Spacer()
             }else{
@@ -41,33 +38,9 @@ struct CartView: View {
                     List{
                         Section {
                             ForEach(cart.orderItems) { item in
-                                HStack {
-                                    Image("burger")
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .frame(width:100, height:100)
-                                    VStack(alignment: .leading){
-                                        Text("\(item.productName)")
-                                            .fontWeight(.semibold)
-                                            .foregroundColor(Color.black)
-                                            .multilineTextAlignment(.leading)
-                                            .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-                                        Text("LKR. \(item.price) x \(item.qty)")
-                                            .fontWeight(.medium)
-                                            .foregroundColor(Color.black)
-                                            .multilineTextAlignment(.center)
-                                            .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-                                    }
-                                    Spacer()
-                                    Button(action: {
-                                        cart.remove(item: Cart(productName: item.productName, price: item.price, qty: item.qty))
-                                    }) {
-                                        Image("rubbish")
-                                            .resizable()
-                                            .aspectRatio(contentMode: .fit)
-                                            .frame(width:30, height:30)
-                                    }
-                                }
+                                CartCompoView(function: {
+                                    cart.remove(item: Cart(productName: item.productName, price: item.price, qty: item.qty, imageUrl: item.imageUrl))
+                                }, productName: "\(item.productName)", productPrice: String(item.price), productQty: String(item.qty), imageUrl: URL(string:item.imageUrl)!)
                             }
                         }
                     }
@@ -96,8 +69,6 @@ struct CartView: View {
                             .fill(Color.white)
                             .shadow(color: Color.gray.opacity(0.4), radius: 5, x: 1, y: 3)
                     )
-                    
-                    
                 }
             }
         }

@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct MainMenuCompo: View {
-    var imageTitle:String
     var productName:String
     var calories:String
     var price:String
-    
+    let imageUrl:URL
     var body: some View {
         HStack {
-            Image("burger")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(width:100, height:100)
+            AsyncImage(
+                url: imageUrl,
+                placeholder: {Text("Loading ...")}
+            ).aspectRatio(contentMode: .fit)
+            .frame(width:100, height:100)
             VStack(alignment: .leading){
                 Text(productName)
                     .fontWeight(.semibold)
@@ -44,6 +44,6 @@ struct MainMenuCompo: View {
 
 struct MainMenuCompo_Previews: PreviewProvider {
     static var previews: some View {
-        MainMenuCompo(imageTitle: "burger", productName: "Burger", calories: "180 cal", price: "500")
+        MainMenuCompo(productName: "Burger", calories: "180 cal", price: "500", imageUrl: URL(string: "https://image.tmdb.org/t/p/original/pThyQovXQrw2m0s9x82twj48Jq4.jpg")!)
     }
 }

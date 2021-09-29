@@ -10,7 +10,6 @@ import SwiftUI
 struct ConfirmOrderView: View {
     
     @State private var isActiveLink = false
-    var confirmDataString = ConfirmOrderStringData()
     @EnvironmentObject var cart: CartViewModel
     let randomInt = Int.random(in: 1..<1000)
     
@@ -21,13 +20,13 @@ struct ConfirmOrderView: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(height:UIScreen.main.bounds.height/3)
             VStack(spacing: 20.0){
-                TextTitle(title: confirmDataString.lbl_confirmTitle, fontSize: 20, fontTitleWeight: .medium, fontColor: Color.black)
-                TextTitle(title: confirmDataString.lbl_orderRecieve, fontSize: 16, fontTitleWeight: .regular, fontColor: Color.black)
-                TextTitle(title: confirmDataString.lbl_keepInTouch, fontSize: 16, fontTitleWeight: .regular, fontColor: Color.black)
+                TextTitle(title: ConfirmOrderStringData.lbl_confirmTitle, fontSize: 20, fontTitleWeight: .medium, fontColor: Color.black)
+                TextTitle(title: ConfirmOrderStringData.lbl_orderRecieve, fontSize: 16, fontTitleWeight: .regular, fontColor: Color.black)
+                TextTitle(title: ConfirmOrderStringData.lbl_keepInTouch, fontSize: 16, fontTitleWeight: .regular, fontColor: Color.black)
                 TextTitle(title: "Order No : OR\(String(randomInt))", fontSize: 18, fontTitleWeight: .regular, fontColor: Color.black)
             }
             NavigationLink(destination: HomeView(), isActive: $isActiveLink) {
-                ButtonView(title: confirmDataString.btn_goHome,
+                ButtonView(title: ConfirmOrderStringData.btn_goHome,
                            function: {
                             cart.orderItems.removeAll()
                             cart.itemTotol = 0

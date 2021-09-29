@@ -8,8 +8,8 @@
 import Foundation
 
 struct CartStringData {
-    var lbl_cart = "Your Cart"
-    var lbl_addEmptyItem = "Add Item to Cart"
-    var lbl_totalPayment = "Total Payment"
-    var btn_checkOut = "Checkout"
+    static let lbl_cart = "Your Cart"
+    static let lbl_addEmptyItem = "Add Item to Cart"
+    static let lbl_totalPayment = "Total Payment"
+    static let btn_checkOut = "Checkout"
 }

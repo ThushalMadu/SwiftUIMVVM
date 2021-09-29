@@ -13,17 +13,16 @@ struct OrderConfirmView: View {
     @State var isMarked = false
     @EnvironmentObject var cart: CartViewModel
     @State private var isActiveLink = false
-    var orderConfirmStrings = OrderConfirmStringData()
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 7.929242, longitude: 81.037497), span: MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5))
     
     var body: some View {
         VStack {
             VStack{
-                TextTitle(title: orderConfirmStrings.lbl_orderConfirmTitle, fontSize: 26, fontTitleWeight: .regular)
+                TextTitle(title: OrderConfirmStringData.lbl_orderConfirmTitle, fontSize: 26, fontTitleWeight: .regular)
                     .padding(.top, 10.0)
             }
             HStack{
-                TextTitle(title: orderConfirmStrings.lbl_shippingTo, fontSize: 20, fontTitleWeight: .regular)                    .padding(.top, 20.0)
+                TextTitle(title: OrderConfirmStringData.lbl_shippingTo, fontSize: 20, fontTitleWeight: .regular)                    .padding(.top, 20.0)
                     .padding(.leading, 30.0)
                 Spacer()
             }
@@ -58,7 +57,7 @@ struct OrderConfirmView: View {
             Map(coordinateRegion: $region, showsUserLocation: true, userTrackingMode: .constant(.follow))
                 .frame(width: .infinity, height: UIScreen.main.bounds.height/7)
             HStack{
-                Text(orderConfirmStrings.lbl_paymentType)
+                Text(OrderConfirmStringData.lbl_paymentType)
                     .font(Font.custom("Georgia", size: 20))
                     .fontWeight(.regular)
                     .padding(.top, 20.0)
@@ -102,7 +101,7 @@ struct OrderConfirmView: View {
                 }
             }
             HStack{
-                Text(orderConfirmStrings.lbl_totalPrice)
+                Text(OrderConfirmStringData.lbl_totalPrice)
                     .font(Font.custom("Georgia", size: 20))
                     .fontWeight(.regular)
                     .padding(.leading, 30.0)
@@ -115,7 +114,7 @@ struct OrderConfirmView: View {
                     .padding(.trailing, 30.0)
             }.padding(.top, 30.0)
             NavigationLink(destination: ConfirmOrderView(), isActive: $isActiveLink) {
-                ButtonView(title: orderConfirmStrings.btn_confirmOrder,
+                ButtonView(title: OrderConfirmStringData.btn_confirmOrder,
                            function: {
                             isActiveLink.toggle()
                            },

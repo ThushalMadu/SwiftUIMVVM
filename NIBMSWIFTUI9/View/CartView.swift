@@ -10,14 +10,13 @@ import SwiftUI
 struct CartView: View {
     @EnvironmentObject var cart: CartViewModel
     @State private var isActiveLink = false
-    var cartStringData = CartStringData()
     
     
     var body: some View {
         VStack{
             HStack{
                 VStack(alignment: .leading){
-                    TextTitle(title: cartStringData.lbl_cart, fontSize: 35, fontTitleWeight: .semibold)
+                    TextTitle(title: CartStringData.lbl_cart, fontSize: 35, fontTitleWeight: .semibold)
                         .padding(.top, 5.0)
                 }
                 Spacer()
@@ -30,7 +29,7 @@ struct CartView: View {
                     .aspectRatio(contentMode: .fit)
                     .frame(height:UIScreen.main.bounds.height/3.5)
                     .opacity(0.8)
-                TextTitle(title: cartStringData.lbl_addEmptyItem, fontSize: 16, fontTitleWeight: .regular, fontColor: Color.black)
+                TextTitle(title: CartStringData.lbl_addEmptyItem, fontSize: 16, fontTitleWeight: .regular, fontColor: Color.black)
                     .padding(.top, 5.0)
                 Spacer()
             }else{
@@ -47,7 +46,7 @@ struct CartView: View {
                     Spacer()
                     VStack{
                         HStack{
-                            TextTitle(title: cartStringData.lbl_totalPayment, fontSize: 18, fontTitleWeight: .regular)
+                            TextTitle(title: CartStringData.lbl_totalPayment, fontSize: 18, fontTitleWeight: .regular)
                                 .padding(.leading, 30.0)
                             Spacer()
                             TextTitle(title: "Rs .\(String(cart.itemTotol))", fontSize: 18, fontTitleWeight: .regular,fontColor: Color.orange)
@@ -56,7 +55,7 @@ struct CartView: View {
                         .padding(.top)
                         Spacer()
                         NavigationLink(destination: OrderConfirmView(), isActive: $isActiveLink) {
-                            ButtonView(title: cartStringData.btn_checkOut,
+                            ButtonView(title: CartStringData.btn_checkOut,
                                        function: {
                                         isActiveLink.toggle()
                                        },

@@ -8,8 +8,8 @@
 import Foundation
 
 struct HomeStringData {
-    var lbl_home: String = "Home"
-    var lbl_cart: String = "Cart"
-    var lbl_profile: String = "Profile"
+    static let lbl_home: String = "Home"
+    static let lbl_cart: String = "Cart"
+    static let lbl_profile: String = "Profile"
 
 }

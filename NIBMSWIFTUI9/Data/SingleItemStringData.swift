@@ -8,7 +8,7 @@
 import Foundation
 
 struct SingleItemStringData {
-    var lbl_productDescription = "Product Description"
-    var btn_addToCart = "Add to Cart"
+    static let lbl_productDescription = "Product Description"
+    static let btn_addToCart = "Add to Cart"
 
 }

@@ -9,7 +9,6 @@ import SwiftUI
 
 struct HomeView: View {
     
-    var homeStrings = HomeStringData()
     @EnvironmentObject var cart: CartViewModel
     @State private var badgeCount: Int = 1
     private var badgePosition: CGFloat = 2
@@ -21,20 +20,20 @@ struct HomeView: View {
                 TabView {
                     ApiView().tabItem {
                         Image(systemName: "list.dash")
-                        Text(homeStrings.lbl_home)
-                    }.tag(homeStrings.lbl_home)
+                        Text(HomeStringData.lbl_home)
+                    }.tag(HomeStringData.lbl_home)
                     .navigationBarHidden(true)
                     .navigationBarBackButtonHidden(true)
                     CartView().tabItem {
                         Image(systemName: "cart")
-                        Text(homeStrings.lbl_cart)
-                    }.tag(homeStrings.lbl_cart)
+                        Text(HomeStringData.lbl_cart)
+                    }.tag(HomeStringData.lbl_cart)
                     .navigationBarHidden(true)
                     .navigationBarBackButtonHidden(true)
                     ProfileView().tabItem {
                         Image(systemName: "person.circle")
-                        Text(homeStrings.lbl_profile)
-                    }.tag(homeStrings.lbl_profile)
+                        Text(HomeStringData.lbl_profile)
+                    }.tag(HomeStringData.lbl_profile)
                     .navigationBarHidden(true)
                     .navigationBarBackButtonHidden(true)
                 }.accentColor(.orange)

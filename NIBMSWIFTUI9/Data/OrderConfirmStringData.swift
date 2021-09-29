@@ -8,9 +8,9 @@
 import Foundation
 
 struct OrderConfirmStringData {
-    var lbl_orderConfirmTitle: String = "Order Confirm"
-    var lbl_shippingTo: String = "Shipping to"
-    var lbl_paymentType: String = "Payment Type"
-    var lbl_totalPrice: String = "Total Payment"
-    var btn_confirmOrder: String = "Confirm Your Order"
+    static let lbl_orderConfirmTitle: String = "Order Confirm"
+    static let lbl_shippingTo: String = "Shipping to"
+    static let lbl_paymentType: String = "Payment Type"
+    static let lbl_totalPrice: String = "Total Payment"
+    static let btn_confirmOrder: String = "Confirm Your Order"
 }

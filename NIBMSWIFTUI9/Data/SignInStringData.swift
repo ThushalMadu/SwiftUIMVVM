@@ -8,10 +8,10 @@
 import Foundation
 
 struct SignInStringData {
-    var lbl_titleSignIn: String = "Let's sign you in"
-    var lbl_desSignIn: String = "Welcome back you have been missed!"
-    var lbl_containSignIn: String = "you have been missed!"
-    var pro_progressView: String = "Please wait..."
-    var btn_signIn: String = "Sign In"
-    var lbl_dontHaveacnt: String = "Don't have an account? Sign Up"
+    static let lbl_titleSignIn: String = "Let's sign you in"
+    static let lbl_desSignIn: String = "Welcome back you have been missed!"
+    static let lbl_containSignIn: String = "you have been missed!"
+    static let pro_progressView: String = "Please wait..."
+    static let btn_signIn: String = "Sign In"
+    static let lbl_dontHaveacnt: String = "Don't have an account? Sign Up"
 }

@@ -19,7 +19,6 @@ struct SignUpView: View {
     @State private var loading = false
     @State private var errorMessage = ""
     @StateObject var signUpService = SignUpService()
-    var signUpText = SignUpStringData()
 
 
     let url = "https://aqueous-temple-31849.herokuapp.com/users/addUser"
@@ -29,13 +28,13 @@ struct SignUpView: View {
             ScrollView {
                 VStack{
                     HStack{
-                        TextTitle(title:signUpText.lbl_titleSignUp, fontSize: 30, fontTitleWeight: .semibold)
+                        TextTitle(title:SignUpStringData.lbl_titleSignUp, fontSize: 30, fontTitleWeight: .semibold)
                             .padding(.leading, 30.0)
                             .padding(.top, 20.0)
                         Spacer()
                     }
                     HStack{
-                        TextTitle(title: signUpText.lbl_desSignUp, fontSize: 14, fontTitleWeight: .regular,fontColor: Color.gray)
+                        TextTitle(title: SignUpStringData.lbl_desSignUp, fontSize: 14, fontTitleWeight: .regular,fontColor: Color.gray)
                             .padding([.leading, .bottom], 30.0)
                             .padding(.top, 5.0)
                             .padding(.trailing, 40.0)
@@ -58,9 +57,9 @@ struct SignUpView: View {
                     .padding([.top, .leading, .bottom], 30.0)
                     NavigationLink(destination: HomeView(), isActive: $signUpService.loggedIn) {
                         if(signUpService.loading){
-                            ProgressView(signUpText.pro_pleaseWait).progressViewStyle(CircularProgressViewStyle(tint: Color.yellow)).scaleEffect(1, anchor: .center)
+                            ProgressView(SignUpStringData.pro_pleaseWait).progressViewStyle(CircularProgressViewStyle(tint: Color.yellow)).scaleEffect(1, anchor: .center)
                         }else{
-                            ButtonView(title: signUpText.btn_signUp,
+                            ButtonView(title: SignUpStringData.btn_signUp,
                                        function: {
                                         signUpService.signUpFun(name: name, email: email, phone_number: phoneNumber, password: password)
                                        },
@@ -72,7 +71,7 @@ struct SignUpView: View {
                             isActiveLinkSignIn.toggle()
                             
                         }) {
-                            TextTitle(title: signUpText.btn_alrdBtn, fontSize: 14, fontTitleWeight: .regular, fontColor: Color.gray)
+                            TextTitle(title: SignUpStringData.btn_alrdBtn, fontSize: 14, fontTitleWeight: .regular, fontColor: Color.gray)
                                 .padding(.top, 30.0)
                         }
                     }

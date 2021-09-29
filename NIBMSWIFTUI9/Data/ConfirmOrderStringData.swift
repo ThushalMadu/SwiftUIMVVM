@@ -8,9 +8,9 @@
 import Foundation
 
 struct ConfirmOrderStringData {
-    var lbl_confirmTitle: String = "Order Sucessfuly Placed"
-    var lbl_orderRecieve: String = "Your order will recivece within this week"
-    var lbl_keepInTouch: String = "Keep in Touch with us"
-    var btn_goHome: String = "Go To Home"
+    static let lbl_confirmTitle: String = "Order Sucessfuly Placed"
+    static let lbl_orderRecieve: String = "Your order will recivece within this week"
+    static let lbl_keepInTouch: String = "Keep in Touch with us"
+    static let btn_goHome: String = "Go To Home"
 
 }

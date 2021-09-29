@@ -8,13 +8,13 @@
 import Foundation
 
 struct ProfileStringData {
-    var lbl_profile: String = "Your Profile"
-    var lbl_personal: String = "Personal Data"
-    var lbl_settings: String = "Settings"
-    var lbl_orderhistory: String = "Order History"
-    var lbl_faqs: String = "FAQ's"
-    var lbl_handbook: String = "Handbook"
-    var lbl_community: String = "Community"
-    var lbl_logOut: String = "Log out"
+    static let lbl_profile: String = "Your Profile"
+    static let lbl_personal: String = "Personal Data"
+    static let lbl_settings: String = "Settings"
+    static let lbl_orderhistory: String = "Order History"
+    static let lbl_faqs: String = "FAQ's"
+    static let lbl_handbook: String = "Handbook"
+    static let lbl_community: String = "Community"
+    static let lbl_logOut: String = "Log out"
 
 }

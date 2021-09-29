@@ -12,7 +12,6 @@ struct SingleItemView: View {
     var singleItem: ShoppingItem
     @State var quantity = 1
     @EnvironmentObject var cartViewModel: CartViewModel
-    var singleItemStrings = SingleItemStringData()
     
     var body: some View {
         ZStack{
@@ -67,7 +66,7 @@ struct SingleItemView: View {
                             .padding(.trailing, 30.0)
                     }
                     HStack{
-                        Text(singleItemStrings.lbl_productDescription)
+                        Text(SingleItemStringData.lbl_productDescription)
                             .font(.title3)
                             .fontWeight(.medium)
                             .padding(.top, 10.0)
@@ -87,7 +86,7 @@ struct SingleItemView: View {
                 .frame(maxWidth:.infinity)
                 
                 Spacer()
-                ButtonView(title: singleItemStrings.btn_addToCart,
+                ButtonView(title: SingleItemStringData.btn_addToCart,
                            function: {
                             self.cartViewModel.addToCart(item: Cart(productName: self.singleItem.productName, price: self.singleItem.price, qty: self.quantity, imageUrl: self.singleItem.imageUrl))
                            },
@@ -102,7 +101,7 @@ struct SingleItemView: View {
 }
 
 struct SingleItemView_Previews: PreviewProvider {
-    @StateObject static var singleitm = ItemApiService()
+    @StateObject static var singleitm = HomeViewModel()
     static let cartViewModel = CartViewModel()
     
     static var previews: some View {

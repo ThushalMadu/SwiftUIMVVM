@@ -15,7 +15,6 @@ struct SignInView: View {
     @State private var isActiveLinkSignUp = false
     @State private var loading = false
     @StateObject var signInService = SignInService()
-    var signInText = SignInStringData()
     
     let url = "https://aqueous-temple-31849.herokuapp.com/users/login"
     
@@ -24,19 +23,19 @@ struct SignInView: View {
             VStack{
                 Spacer()
                 HStack{
-                    TextTitle(title: signInText.lbl_titleSignIn, fontSize: 30, fontTitleWeight: .semibold)
+                    TextTitle(title: SignInStringData.lbl_titleSignIn, fontSize: 30, fontTitleWeight: .semibold)
                         .padding(.leading, 30.0)
                         .padding(.top, 20.0)
                     Spacer()
                 }
                 HStack{
-                    TextTitle(title: signInText.lbl_desSignIn, fontSize: 14, fontTitleWeight: .regular)
+                    TextTitle(title: SignInStringData.lbl_desSignIn, fontSize: 14, fontTitleWeight: .regular)
                         .padding([.leading], 30.0)
                         .padding(.top, 5.0)
                     Spacer()
                 }
                 HStack{
-                    TextTitle(title: signInText.lbl_containSignIn, fontSize: 14, fontTitleWeight: .regular)
+                    TextTitle(title: SignInStringData.lbl_containSignIn, fontSize: 14, fontTitleWeight: .regular)
                         .padding([.leading, .bottom], 30.0)
                         .padding(.top, 5.0)
                     Spacer()
@@ -56,9 +55,9 @@ struct SignInView: View {
                 .padding([.top, .leading, .bottom], 30.0)
                 NavigationLink(destination: HomeView(), isActive:$signInService.loggedIn) {
                     if(signInService.loading){
-                        ProgressView(signInText.pro_progressView).progressViewStyle(CircularProgressViewStyle(tint: Color.yellow)).scaleEffect(1, anchor: .center)
+                        ProgressView(SignInStringData.pro_progressView).progressViewStyle(CircularProgressViewStyle(tint: Color.yellow)).scaleEffect(1, anchor: .center)
                     }else{
-                        ButtonView(title: signInText.btn_signIn,
+                        ButtonView(title: SignInStringData.btn_signIn,
                                    function: {
                                     signInService.loginFun(email: email, password: password)
                                    },
@@ -72,7 +71,7 @@ struct SignInView: View {
                         isActiveLinkSignUp.toggle()
                         
                     }) {
-                        TextTitle(title: signInText.lbl_dontHaveacnt, fontSize: 14, fontTitleWeight: .regular, fontColor: Color.gray)
+                        TextTitle(title: SignInStringData.lbl_dontHaveacnt, fontSize: 14, fontTitleWeight: .regular, fontColor: Color.gray)
                             .padding(.top, 30.0)
                     }
                                 }

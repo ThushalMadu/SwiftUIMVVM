@@ -25,11 +25,7 @@ class SignInService: ObservableObject {
             response in
             switch (response.result) {
             case .success:
-                                UserDefaults.standard.set(email, forKey: "email")
-                //                if let data = response.data, let str = String(data: data, encoding: String.Encoding.utf8){
-                //                    UserDefaults.standard.set(str, forKey: "userObject")
-                //                    print(str)
-                //                }
+                UserDefaults.standard.set(email, forKey: "email")
                 do {
                     let auth = try JSONDecoder().decode(UserData.self, from: response.data!)
                     print(auth)

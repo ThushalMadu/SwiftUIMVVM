@@ -12,12 +12,11 @@ struct ProfileView: View {
     let auth = UserDefaults.standard.auth(forKey: "Auth")
     @State private var isActivePersonal:Bool = false
     
-    var profileStringData = ProfileStringData()
     var body: some View {
         VStack{
             HStack{
                 VStack(alignment: .leading){
-                    TextTitle(title: profileStringData.lbl_profile, fontSize: 35, fontTitleWeight: .semibold)
+                    TextTitle(title: ProfileStringData.lbl_profile, fontSize: 35, fontTitleWeight: .semibold)
                         .padding(.top, 5.0)
                 }
                 Spacer()
@@ -45,23 +44,23 @@ struct ProfileView: View {
                 NavigationLink(destination: PersonalDataView(), isActive:$isActivePersonal) {
                     ProfileListCompo(imageTitle: "person.crop.circle.fill", function: {
                         isActivePersonal.toggle()
-                    }, title: profileStringData.lbl_personal)
+                    }, title: ProfileStringData.lbl_personal)
                 }
                 ProfileListCompo(imageTitle: "gear", function: {
                     print("click settings")
-                }, title: profileStringData.lbl_settings ).padding(.top)
+                }, title: ProfileStringData.lbl_settings ).padding(.top)
                 ProfileListCompo(imageTitle: "note.text", function: {
                     print("click past order")
-                }, title: profileStringData.lbl_orderhistory ).padding(.top)
+                }, title: ProfileStringData.lbl_orderhistory ).padding(.top)
                 ProfileListCompo(imageTitle: "message.circle.fill", function: {
                     print("click message")
-                }, title: profileStringData.lbl_faqs).padding(.top)
+                }, title: ProfileStringData.lbl_faqs).padding(.top)
                 ProfileListCompo(imageTitle: "book.closed.fill", function: {
                     print("click book")
-                }, title: profileStringData.lbl_handbook).padding(.top)
+                }, title: ProfileStringData.lbl_handbook).padding(.top)
                 ProfileListCompo(imageTitle: "person.3.fill", function: {
                     print("click person")
-                }, title: profileStringData.lbl_community).padding(.top)
+                }, title: ProfileStringData.lbl_community).padding(.top)
                 ProfileListCompo(imageTitle: "square.and.arrow.down", function: {
                     print("click Logout")
 //                    let domain = Bundle.main.bundleIdentifier!
@@ -69,7 +68,7 @@ struct ProfileView: View {
 //                    UserDefaults.standard.synchronize()
 //                    print(Array(UserDefaults.standard.dictionaryRepresentation().keys).count)
                     
-                }, title: profileStringData.lbl_logOut).padding(.top)
+                }, title: ProfileStringData.lbl_logOut).padding(.top)
             }
             .padding(.top, 10.0)
             Spacer()

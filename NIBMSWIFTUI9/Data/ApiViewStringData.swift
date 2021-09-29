@@ -8,10 +8,10 @@
 import Foundation
 
 struct ApiViewStringData {
-    var lbl_menu: String = "Menu"
-    var pro_pleaseWait: String = "Please wait..."
-    var lbl_heyName: String = "Hey Thushal"
-    var lbl_discount: String = "Discount"
-    var lbl_aLLprodcts: String = "All Products"
+    static let lbl_menu: String = "Menu"
+    static let pro_pleaseWait: String = "Please wait..."
+    static let lbl_heyName: String = "Hey Thushal"
+    static let lbl_discount: String = "Discount"
+    static let lbl_aLLprodcts: String = "All Products"
 
 }

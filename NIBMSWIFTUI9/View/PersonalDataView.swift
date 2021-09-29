@@ -9,14 +9,13 @@ import SwiftUI
 
 struct PersonalDataView: View {
     
-    var personalDataStrings = PersonalDataString()
     let auth = UserDefaults.standard.auth(forKey: "Auth")
     
     var body: some View {
         VStack {
             HStack{
                 VStack(alignment: .leading){
-                    TextTitle(title: personalDataStrings.lbl_account, fontSize: 35, fontTitleWeight: .semibold)
+                    TextTitle(title: PersonalDataString.lbl_account, fontSize: 35, fontTitleWeight: .semibold)
                 }
                 Spacer()
             }

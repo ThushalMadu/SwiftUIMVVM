@@ -8,6 +8,6 @@
 import Foundation
 
 struct PersonalDataString {
-    var lbl_account = "Account"
+    static let lbl_account = "Account"
 
 }

@@ -7,9 +7,17 @@
 
 import Foundation
 
-class ItemApiService:ObservableObject {
-    @Published var shoppingItems = [ShoppingItem]()
-    @Published var loading = true
+
+// CHECK WITHOUT LOADER AND PRINT ALL THE FUNCTION IS CALLING AND CHECK PROTOCOL SUCESSFULLY CALLED
+
+
+protocol HomeDataService {
+    func loadData(completion:@escaping ([ShoppingItem]) -> ())
+}
+
+class ItemApiService: HomeDataService {
+    
+    //    @Published var loading = true
     
     func loadData(completion:@escaping ([ShoppingItem]) -> ()) {
         
@@ -20,10 +28,12 @@ class ItemApiService:ObservableObject {
         
         URLSession.shared.dataTask(with: url) { data, response, error in
             let shoppingItems = try! JSONDecoder().decode([ShoppingItem].self, from: data!)
-//            print(shoppingItems)
-            DispatchQueue.main.async {
+            print(shoppingItems)
+            //            In swiftui two main process  dispatch with main and dispatch with global( BackGround Thread )
+            //            we can use global(background) and inside of that background can use MAIN thread
+            DispatchQueue.main.async {   //UI UPDATES ALWAYS SHOULD HAPPEN THE MAIN THREAD
                 completion(shoppingItems)
-                self.loading = false
+                //                self.loading = false
             }
         }.resume()
     }

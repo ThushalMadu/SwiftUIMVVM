@@ -17,6 +17,7 @@ class HomeViewModel: ObservableObject {
     }
     
     func getHomeData() {
+        
         homeDataService.loadData { [weak self]shoppingItems in
             self?.shoppingItems = shoppingItems
         }

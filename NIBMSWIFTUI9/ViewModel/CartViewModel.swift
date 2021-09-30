@@ -29,5 +29,9 @@ class CartViewModel: ObservableObject {
         }
     }
     
+    func clearCart() {
+        orderItems.removeAll()
+        itemTotol = 0
+    }
     
 }

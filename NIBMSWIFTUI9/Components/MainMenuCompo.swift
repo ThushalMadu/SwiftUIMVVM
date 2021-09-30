@@ -16,7 +16,7 @@ struct MainMenuCompo: View {
         HStack {
             AsyncImage(
                 url: imageUrl,
-                placeholder: {Text("Loading ...")}
+                placeholder: {ProgressView("Loading ...").progressViewStyle(CircularProgressViewStyle(tint: Color.yellow)).scaleEffect(1, anchor: .center)}
             ).aspectRatio(contentMode: .fit)
             .frame(width:100, height:100)
             VStack(alignment: .leading){

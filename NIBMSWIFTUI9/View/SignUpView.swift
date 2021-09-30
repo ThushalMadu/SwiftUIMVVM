@@ -19,8 +19,7 @@ struct SignUpView: View {
     @State private var loading = false
     @State private var errorMessage = ""
     @StateObject var signUpService = SignUpService()
-
-
+    
     let url = "https://aqueous-temple-31849.herokuapp.com/users/addUser"
     
     var body: some View {

@@ -22,7 +22,8 @@ struct OrderConfirmView: View {
                     .padding(.top, 10.0)
             }
             HStack{
-                TextTitle(title: OrderConfirmStringData.lbl_shippingTo, fontSize: 20, fontTitleWeight: .regular)                    .padding(.top, 20.0)
+                TextTitle(title: OrderConfirmStringData.lbl_shippingTo, fontSize: 20, fontTitleWeight: .regular)
+                    .padding(.top, 20.0)
                     .padding(.leading, 30.0)
                 Spacer()
             }

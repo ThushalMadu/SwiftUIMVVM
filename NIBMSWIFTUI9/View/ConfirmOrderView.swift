@@ -28,8 +28,7 @@ struct ConfirmOrderView: View {
             NavigationLink(destination: HomeView(), isActive: $isActiveLink) {
                 ButtonView(title: ConfirmOrderStringData.btn_goHome,
                            function: {
-                            cart.orderItems.removeAll()
-                            cart.itemTotol = 0
+                            cart.clearCart()
                             isActiveLink.toggle()
                            },
                            width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/45)

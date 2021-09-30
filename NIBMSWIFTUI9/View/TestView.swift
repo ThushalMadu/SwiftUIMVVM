@@ -42,7 +42,7 @@ struct TestView: View {
                                 placeholder: {Text("Loading ...")}
                             ).scaledToFill()
                             .opacity(0.5)
-                            .frame(width: .infinity)
+//                            .frame(width: .infinity)
                             Text(item.name)
                                 .font(Font.custom("Georgia", size: 30))
                                 .fontWeight(.semibold)

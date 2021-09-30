@@ -19,7 +19,7 @@ struct SingleItemView: View {
             VStack{
                 AsyncImage(
                     url: URL(string:singleItem.imageUrl)!,
-                    placeholder: {Text("Loading ...")}
+                    placeholder: {ProgressView("Loading ...").progressViewStyle(CircularProgressViewStyle(tint: Color.yellow)).scaleEffect(1, anchor: .center)}
                 ).aspectRatio(contentMode: .fit)
                 .frame(width:UIScreen.main.bounds.width/1.5, height:UIScreen.main.bounds.height/4)
                 Spacer()

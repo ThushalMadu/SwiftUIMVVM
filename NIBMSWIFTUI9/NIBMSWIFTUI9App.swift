@@ -20,7 +20,7 @@ struct NIBMSWIFTUI9App: App {
 //            if email == nil {
 //                SignUpView().environmentObject(order)
 //            }else{
-//                ApiView().environmentObject(order)
+//                ApiView().environmentObject(order).environmentObject(UIState)
 //            }
         }
     }

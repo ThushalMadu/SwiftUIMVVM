@@ -16,9 +16,7 @@ protocol HomeDataService {
 }
 
 class ItemApiService: HomeDataService {
-    
-    //    @Published var loading = true
-    
+        
     func loadData(completion:@escaping ([ShoppingItem]) -> ()) {
         
         guard let url = URL(string: "https://excome.herokuapp.com/foods/allFoods") else {
@@ -33,7 +31,6 @@ class ItemApiService: HomeDataService {
             //            we can use global(background) and inside of that background can use MAIN thread
             DispatchQueue.main.async {   //UI UPDATES ALWAYS SHOULD HAPPEN THE MAIN THREAD
                 completion(shoppingItems)
-                //                self.loading = false
             }
         }.resume()
     }

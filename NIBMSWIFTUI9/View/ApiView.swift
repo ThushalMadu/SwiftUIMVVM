@@ -11,19 +11,16 @@ struct ApiView: View {
     
     @State var shoppingItems = [ShoppingItem]()
     @StateObject var homeViewModel = HomeViewModel()
-    @State private var loading = true
     @State private var isActive = false
     @State private var email = UserDefaults.standard.string(forKey: "email")
     let auth = UserDefaults.standard.auth(forKey: "Auth")
     
     
     var body: some View {
-        if(loading){
+        if(homeViewModel.loading){
             ProgressView(ApiViewStringData.pro_pleaseWait).progressViewStyle(CircularProgressViewStyle(tint: Color.purple)).scaleEffect(1, anchor: .center)
                 .onAppear() {
-                    loading = true
                     homeViewModel.getHomeData()
-                    loading = false
                 }
                 .navigationBarHidden(true)
                 .navigationBarBackButtonHidden(true)
@@ -67,9 +64,7 @@ struct ApiView: View {
                         MainMenuCompo( productName: ShoppingItem.productName, calories: ShoppingItem.calories, price: "LKR. \(ShoppingItem.price)",imageUrl: URL(string:ShoppingItem.imageUrl)!)
                     }
                 }.onAppear() {
-                    loading = true
                     homeViewModel.getHomeData()
-                    loading = false
                 }
             }
         }

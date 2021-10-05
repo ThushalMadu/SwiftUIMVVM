@@ -7,6 +7,7 @@
 
 import Foundation
 import Alamofire
+
 class SignInService: ObservableObject {
     let url = "https://aqueous-temple-31849.herokuapp.com/users/login"
     @Published var errorMessage = ""
@@ -46,6 +47,4 @@ class SignInService: ObservableObject {
             }
         }
     }
-    
-    
 }

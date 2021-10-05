@@ -9,19 +9,18 @@ import SwiftUI
 
 @main
 struct NIBMSWIFTUI9App: App {
-    @StateObject private var order = CartViewModel()
+    @StateObject private var cartViewModel = CartViewModel()
     @StateObject private var UIState = UIStateModel()
     let email = UserDefaults.standard.string(forKey: "email")
     var body: some Scene {
         WindowGroup {
-                        SignUpView().environmentObject(order).environmentObject(UIState)
-//            TestView().environmentObject(UIState)
-
-//            if email == nil {
-//                SignUpView().environmentObject(order)
-//            }else{
-//                ApiView().environmentObject(order).environmentObject(UIState)
-//            }
+            SignUpView().environmentObject(cartViewModel).environmentObject(UIState)
+            
+//                        if email == nil {
+//                            SignUpView().environmentObject(cartViewModel).environmentObject(UIState)
+//                        }else{
+//                                HomeView().environmentObject(cartViewModel).environmentObject(UIState)
+//                        }
         }
     }
 }

@@ -19,7 +19,9 @@ struct ButtonView: View {
         })
         {
             Text(title)
-        }.buttonStyle(ButtonViewStyle(definWidth: width, definHeight: height))
+        }
+        .accessibility(identifier: "Component_Button")
+        .buttonStyle(ButtonViewStyle(definWidth: width, definHeight: height))
     }
 }
 

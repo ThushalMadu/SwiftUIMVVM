@@ -13,8 +13,10 @@ struct HomeView: View {
     @State private var badgeCount: Int = 1
     private var badgePosition: CGFloat = 2
     private var tabsCount: CGFloat = 3
-    
+    @StateObject private var UIState = UIStateModel()
+
     var body: some View {
+        
         GeometryReader { geometry in
             ZStack(alignment: .bottomLeading) {
                 TabView {

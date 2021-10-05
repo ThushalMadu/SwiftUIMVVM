@@ -41,7 +41,9 @@ struct TestView: View {
                                 url: URL(string:item.imageUrl)!,
                                 placeholder: {Text("Loading ...")}
                             ).scaledToFill()
-                            .opacity(0.5)
+//                            .opacity(0.5)
+                            .blur(radius: 2)
+
 //                            .frame(width: .infinity)
                             Text(item.name)
                                 .font(Font.custom("Georgia", size: 30))

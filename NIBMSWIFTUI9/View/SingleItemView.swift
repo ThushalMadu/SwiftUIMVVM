@@ -102,10 +102,9 @@ struct SingleItemView: View {
 
 struct SingleItemView_Previews: PreviewProvider {
     @StateObject static var singleitm = HomeViewModel()
-    static let cartViewModel = CartViewModel()
     
     static var previews: some View {
         
-        SingleItemView(singleItem: singleitm.shoppingItems[0]).environmentObject(cartViewModel)
+        SingleItemView(singleItem: singleitm.shoppingItems[0])
     }
 }

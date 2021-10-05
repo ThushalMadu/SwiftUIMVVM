@@ -18,6 +18,7 @@ struct TextTitle: View {
             .font(Font.custom("Georgia", size: fontSize))
             .fontWeight(fontTitleWeight)
             .foregroundColor(fontColor)
+            .accessibility(identifier: "Component_TextTile")
     }
 }
 

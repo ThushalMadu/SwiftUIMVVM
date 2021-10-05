@@ -20,6 +20,8 @@ struct TextView: View {
                 .disableAutocorrection(true)
                 .keyboardType(keyboardType)
                 .textFieldStyle(TextViewStyle())
+                .accessibility(identifier: "Component_TextView")
+
         }
         .background(
                     RoundedRectangle(cornerRadius: 10)

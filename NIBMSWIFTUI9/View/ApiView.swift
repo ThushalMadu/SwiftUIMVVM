@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct ApiView: View {
-    
+
     @State var shoppingItems = [ShoppingItem]()
     @StateObject var homeViewModel = HomeViewModel()
     @State private var isActive = false
     @State private var email = UserDefaults.standard.string(forKey: "email")
     let auth = UserDefaults.standard.auth(forKey: "Auth")
-    
+
     
     var body: some View {
         if(homeViewModel.loading){

@@ -121,6 +121,7 @@ struct OrderConfirmView: View {
                            },
                            width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/45)
                     .padding(.top, 50.0)
+                    .padding(.bottom, 50.0)
             }
             Spacer()
         }

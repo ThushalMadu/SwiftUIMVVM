@@ -11,6 +11,7 @@ import XCTest
 class NIBMSWIFTUI9Tests: XCTestCase {
     
     var sut: HomeViewModel!
+    var loginSut: SignUpDataService!
 
     // First Run ( setup the values / intializeing values )
     override func setUpWithError() throws {
@@ -54,6 +55,11 @@ class MockHomeDataService: HomeDataService {
         completion([ShoppingItem(productName: "Burger", calories: "123 cal", price: 234, description: "Burger superb with cheese", imageUrl: "htttp.ad.com")])
     }
 }
+class MockSignUpDataService: SignUpDataService {
+    func signUpFun(name: String, email: String, phone_number: String, password: String){
+        
+    }
 
+}
 
 // In the code coverage codecoverage are shows how much number of code coverage in this test 

@@ -91,10 +91,9 @@ struct SingleItemView: View {
                             self.cartViewModel.addToCart(item: Cart(productName: self.singleItem.productName, price: self.singleItem.price, qty: self.quantity, imageUrl: self.singleItem.imageUrl))
                            },
                            width:UIScreen.main.bounds.width/1.5,height: UIScreen.main.bounds.height/45)
+                    .padding(.bottom, 20.0)
             }
-            
         }
-        
         //        .navigationBarBackButtonHidden(true)
         //        .navigationBarHidden(true)
     }

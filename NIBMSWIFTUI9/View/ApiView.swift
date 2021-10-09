@@ -18,7 +18,7 @@ struct ApiView: View {
     
     var body: some View {
         if(homeViewModel.loading){
-            ProgressView(ApiViewStringData.pro_pleaseWait).progressViewStyle(CircularProgressViewStyle(tint: Color.purple)).scaleEffect(1, anchor: .center)
+            ProgressView(ApiViewStringData.pro_pleaseWait).progressViewStyle(CircularProgressViewStyle(tint: Color.orange)).scaleEffect(1, anchor: .center)
                 .onAppear() {
                     homeViewModel.getHomeData()
                 }

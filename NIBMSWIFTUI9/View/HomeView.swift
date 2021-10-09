@@ -16,7 +16,6 @@ struct HomeView: View {
     @StateObject private var UIState = UIStateModel()
 
     var body: some View {
-        
         GeometryReader { geometry in
             ZStack(alignment: .bottomLeading) {
                 TabView {

@@ -19,7 +19,9 @@ struct NIBMSWIFTUI9App: App {
 //                        if email == nil {
 //                            SignUpView().environmentObject(cartViewModel).environmentObject(UIState)
 //                        }else{
+//                            NavigationView{
 //                                HomeView().environmentObject(cartViewModel).environmentObject(UIState)
+//                            }
 //                        }
         }
     }

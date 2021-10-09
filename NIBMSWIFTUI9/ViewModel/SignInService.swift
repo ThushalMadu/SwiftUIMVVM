@@ -8,6 +8,12 @@
 import Foundation
 import Alamofire
 
+
+protocol SignInDataService {
+    func loginFun(email: String, password: String)
+}
+
+
 class SignInService: ObservableObject {
     let url = "https://aqueous-temple-31849.herokuapp.com/users/login"
     @Published var errorMessage = ""

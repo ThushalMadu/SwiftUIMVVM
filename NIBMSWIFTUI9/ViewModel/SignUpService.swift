@@ -8,6 +8,10 @@
 import Foundation
 import Alamofire
 
+protocol SignUpDataService {
+    func signUpFun(name: String, email: String, phone_number: String, password: String) 
+}
+
 class SignUpService:ObservableObject {
     
     let url = "https://aqueous-temple-31849.herokuapp.com/users/addUser"
@@ -44,5 +48,4 @@ class SignUpService:ObservableObject {
             }
         }
     }
-    
 }

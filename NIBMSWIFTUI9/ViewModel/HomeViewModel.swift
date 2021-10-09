@@ -13,7 +13,6 @@ class HomeViewModel: ObservableObject {
     
     var homeDataService: HomeDataService = ItemApiService()
     
-    
     init(homeDataService: HomeDataService = ItemApiService()) {
         self.homeDataService = homeDataService
     }
@@ -24,5 +23,4 @@ class HomeViewModel: ObservableObject {
             self?.loading = false
         }
     }
-    
 }

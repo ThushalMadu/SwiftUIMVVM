@@ -11,6 +11,8 @@ struct ProfileView: View {
     @State private var email = UserDefaults.standard.string(forKey: "email")
     let auth = UserDefaults.standard.auth(forKey: "Auth")
     @State private var isActivePersonal:Bool = false
+    @State private var isActiveLog:Bool = false
+    @State private var isActiveOrderHistory:Bool = false
     
     var body: some View {
         VStack{
@@ -49,9 +51,11 @@ struct ProfileView: View {
                 ProfileListCompo(imageTitle: "gear", function: {
                     print("click settings")
                 }, title: ProfileStringData.lbl_settings ).padding(.top)
-                ProfileListCompo(imageTitle: "note.text", function: {
-                    print("click past order")
-                }, title: ProfileStringData.lbl_orderhistory ).padding(.top)
+                NavigationLink(destination: OrderHistoryView(), isActive:$isActiveOrderHistory) {
+                    ProfileListCompo(imageTitle: "note.text", function: {
+                        isActiveOrderHistory.toggle()
+                    }, title: ProfileStringData.lbl_orderhistory ).padding(.top)
+                }
                 ProfileListCompo(imageTitle: "message.circle.fill", function: {
                     print("click message")
                 }, title: ProfileStringData.lbl_faqs).padding(.top)
@@ -61,14 +65,11 @@ struct ProfileView: View {
                 ProfileListCompo(imageTitle: "person.3.fill", function: {
                     print("click person")
                 }, title: ProfileStringData.lbl_community).padding(.top)
-                ProfileListCompo(imageTitle: "square.and.arrow.down", function: {
-                    print("click Logout")
-//                    let domain = Bundle.main.bundleIdentifier!
-//                    UserDefaults.standard.removePersistentDomain(forName: domain)
-//                    UserDefaults.standard.synchronize()
-//                    print(Array(UserDefaults.standard.dictionaryRepresentation().keys).count)
-                    
-                }, title: ProfileStringData.lbl_logOut).padding(.top)
+                NavigationLink(destination: SignUpView(), isActive:$isActiveLog) {
+                    ProfileListCompo(imageTitle: "square.and.arrow.down", function: {
+                    }, title: ProfileStringData.lbl_logOut).padding(.top)
+                }
+                
             }
             .padding(.top, 10.0)
             Spacer()

@@ -14,7 +14,7 @@ struct NIBMSWIFTUI9App: App {
     let email = UserDefaults.standard.string(forKey: "email")
     var body: some Scene {
         WindowGroup {
-            SignUpView().environmentObject(cartViewModel).environmentObject(UIState)
+            ContentView().environmentObject(cartViewModel).environmentObject(UIState)
             
 //                        if email == nil {
 //                            SignUpView().environmentObject(cartViewModel).environmentObject(UIState)

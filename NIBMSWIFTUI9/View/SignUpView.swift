@@ -23,7 +23,7 @@ struct SignUpView: View {
     let url = "https://aqueous-temple-31849.herokuapp.com/users/addUser"
     
     var body: some View {
-        NavigationView {
+//        NavigationView {
             ScrollView {
                 VStack{
                     HStack{
@@ -78,7 +78,7 @@ struct SignUpView: View {
             }
             .navigationBarHidden(true)
             .navigationBarBackButtonHidden(true)
-        }
+//        }
     }
 }
 

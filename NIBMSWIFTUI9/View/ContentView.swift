@@ -8,42 +8,18 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    @State var isActiveLink = false
-    @State var name:String=""
-    @State var age:String=""
+    let email = UserDefaults.standard.string(forKey: "email")
+    @StateObject private var cartViewModel = CartViewModel()
+    @StateObject private var UIState = UIStateModel()
     
     var body: some View {
-        NavigationView {
-            VStack{
-                Image("iosimage")
-                    .clipShape(Circle())
-                    .overlay(Circle().stroke(Color.white, lineWidth: 3))
-                    .shadow(radius:7)
-                  
-                Spacer()
-                Text("Hello, Thushal!")
-                    .padding()
-                Spacer()
-                TextView(title: "Enter Your Name", text: $name)
-                TextView(title: "Enter Your Age", text: $age,keyboardType: .numberPad)
-                Spacer()
-                if(name=="" || age==""){
-                    Text("Enter Your Details Here")
-                        .fontWeight(.medium)
-                        .foregroundColor(Color.black)
-                        .padding()
-                }else{
-                    NavigationLink(destination: SecondView(name: self.$name, age: self.$age), isActive: $isActiveLink) {
-                        Button(action: {
-                            isActiveLink = true
-                        }) {
-                            Text("Click Here for Second View")
-                                .padding()
-                        }
-                    }
-                }
-                Spacer()
+        if email == nil {
+            NavigationView{
+                SignUpView()
+            }
+        }else{
+            NavigationView{
+                HomeView()
             }
         }
     }

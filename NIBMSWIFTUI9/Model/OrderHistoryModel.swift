@@ -12,7 +12,7 @@ class OrderHistoryModel: Codable {
     let totalPrice: Int
     let id: String
     let orderItem: [OrderItem]
-    let categeroy, adressNo1, adressNo2, date: String
+    let categeroy, adressNo1, adressNo2, orderedDate: String
     let v: Int
 
     enum CodingKeys: String, CodingKey {
@@ -22,18 +22,18 @@ class OrderHistoryModel: Codable {
         case categeroy
         case adressNo1 = "adress_No1"
         case adressNo2 = "adress_No2"
-        case date
+        case orderedDate
         case v = "__v"
     }
 
-    init(totalPrice: Int, id: String, orderItem: [OrderItem], categeroy: String, adressNo1: String, adressNo2: String, date: String, v: Int) {
+    init(totalPrice: Int, id: String, orderItem: [OrderItem], categeroy: String, adressNo1: String, adressNo2: String, orderedDate: String, v: Int) {
         self.totalPrice = totalPrice
         self.id = id
         self.orderItem = orderItem
         self.categeroy = categeroy
         self.adressNo1 = adressNo1
         self.adressNo2 = adressNo2
-        self.date = date
+        self.orderedDate = orderedDate
         self.v = v
     }
 }

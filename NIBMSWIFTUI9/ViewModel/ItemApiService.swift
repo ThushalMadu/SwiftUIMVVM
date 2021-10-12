@@ -26,7 +26,7 @@ class ItemApiService: HomeDataService {
         
         URLSession.shared.dataTask(with: url) { data, response, error in
             let shoppingItems = try! JSONDecoder().decode([ShoppingItem].self, from: data!)
-            print(shoppingItems)
+//            print(shoppingItems)
             //            In swiftui two main process  dispatch with main and dispatch with global( BackGround Thread )
             //            we can use global(background) and inside of that background can use MAIN thread
             DispatchQueue.main.async {   //UI UPDATES ALWAYS SHOULD HAPPEN THE MAIN THREAD

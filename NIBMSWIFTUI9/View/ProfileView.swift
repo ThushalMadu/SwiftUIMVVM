@@ -11,8 +11,9 @@ struct ProfileView: View {
     @State private var email = UserDefaults.standard.string(forKey: "email")
     let auth = UserDefaults.standard.auth(forKey: "Auth")
     @State private var isActivePersonal:Bool = false
-    @State private var isActiveLog:Bool = false
+    //    @State private var isActiveLogProfile:Bool = false
     @State private var isActiveOrderHistory:Bool = false
+    @StateObject private var userAuth = UserAuth()
     
     var body: some View {
         VStack{
@@ -43,19 +44,19 @@ struct ProfileView: View {
                 Spacer()
             }
             List {
-                NavigationLink(destination: PersonalDataView(), isActive:$isActivePersonal) {
-                    ProfileListCompo(imageTitle: "person.crop.circle.fill", function: {
-                        isActivePersonal.toggle()
-                    }, title: ProfileStringData.lbl_personal)
-                }
+                //                NavigationLink(destination: PersonalDataView(), isActive:$isActivePersonal) {
+                ProfileListCompo(imageTitle: "person.crop.circle.fill", function: {
+                    isActivePersonal.toggle()
+                }, title: ProfileStringData.lbl_personal)
+                //                }
                 ProfileListCompo(imageTitle: "gear", function: {
                     print("click settings")
                 }, title: ProfileStringData.lbl_settings ).padding(.top)
-                NavigationLink(destination: OrderHistoryView(), isActive:$isActiveOrderHistory) {
-                    ProfileListCompo(imageTitle: "note.text", function: {
-                        isActiveOrderHistory.toggle()
-                    }, title: ProfileStringData.lbl_orderhistory ).padding(.top)
-                }
+                //                NavigationLink(destination: OrderHistoryView(), isActive:$isActiveOrderHistory) {
+                ProfileListCompo(imageTitle: "note.text", function: {
+                    isActiveOrderHistory.toggle()
+                }, title: ProfileStringData.lbl_orderhistory ).padding(.top)
+                //                }
                 ProfileListCompo(imageTitle: "message.circle.fill", function: {
                     print("click message")
                 }, title: ProfileStringData.lbl_faqs).padding(.top)
@@ -65,11 +66,13 @@ struct ProfileView: View {
                 ProfileListCompo(imageTitle: "person.3.fill", function: {
                     print("click person")
                 }, title: ProfileStringData.lbl_community).padding(.top)
-                NavigationLink(destination: SignUpView(), isActive:$isActiveLog) {
+                NavigationLink(destination: SignUpView().onAppear {
+                    userAuth.logout()
+                }, isActive:$userAuth.isLoggedOut) {
                     ProfileListCompo(imageTitle: "square.and.arrow.down", function: {
+                        print("wwww")
                     }, title: ProfileStringData.lbl_logOut).padding(.top)
                 }
-                
             }
             .padding(.top, 10.0)
             Spacer()

@@ -8,15 +8,18 @@
 import Foundation
 
 class UserAuth: ObservableObject {
-    @Published var isLoggedin = false     // published property to update view
+    @Published var isLoggedOut = false     // published property to update view
 
     func login() {
         // login request... on success:
-        self.isLoggedin = true
+//        self.isLoggedin = true
     }
 
     func logout() {
-        // login request... on success:
-        self.isLoggedin = false
+        UserDefaults.standard.set(nil, forKey: "email")
+        UserDefaults.standard.removeObject(forKey: "Auth")
+        isLoggedOut = true
+        print("done calling logout")
     }
+    
 }
